@@ -1,0 +1,267 @@
+/* ---- portada grande ---- */
+.hero-detalle {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  min-height: 26rem;
+  padding: 2rem;
+  border: 1px solid var(--borde);
+  border-radius: 2rem;
+  background: var(--fondo-2);
+}
+
+/* oscurece la parte de abajo para que se lea el título */
+.hero-detalle::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, hsl(var(--tono) 24% 7% / 0.9), transparent 65%);
+}
+
+/* el póster borroso de fondo: le da los colores a la portada */
+.hero-fondo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(40px) saturate(1.4) brightness(0.7);
+  transform: scale(1.2);
+}
+
+/* el póster entero a la derecha, con el borde izquierdo que se funde */
+.hero-poster {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: auto;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 35%);
+  mask-image: linear-gradient(to right, transparent, #000 35%);
+}
+
+.hero-contenido {
+  position: relative;
+  z-index: 1;
+}
+
+.chip {
+  display: inline-block;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  background: hsl(0 0% 100% / 0.14);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.hero-titulo {
+  margin: 0.75rem 0 1.25rem;
+  font-size: clamp(2.5rem, 6vw, 3.75rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+/* ---- botones ---- */
+.boton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.6rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s, background-color 0.15s;
+}
+
+.boton:hover {
+  transform: translateY(-2px);
+}
+
+.boton-principal {
+  background: var(--acento);
+  color: var(--sobre-acento);
+}
+
+.boton-principal:hover {
+  background: hsl(var(--tono-celeste) 90% 70%);
+}
+
+.boton-secundario {
+  border-color: var(--borde);
+  background: hsl(var(--tono) 24% 7% / 0.4);
+  color: var(--texto);
+}
+
+.boton-secundario:hover {
+  background: var(--fondo-3);
+}
+
+/* ---- info: año, edad, sinopsis y géneros ---- */
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--texto-suave);
+}
+
+.edad {
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  background: hsl(var(--tono) 15% 40%);
+  color: var(--texto);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.sinopsis {
+  max-width: 40rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.generos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.generos li {
+  padding: 0.3rem 0.9rem;
+  border: 1px solid var(--borde);
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+
+/* ---- cuadritos de datos (duración, edad, año, calidad) ---- */
+.datos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 0;
+}
+
+.dato {
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--borde);
+  border-radius: 1rem;
+  background: var(--fondo-2);
+}
+
+.dato dt {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--texto-suave);
+}
+
+.dato dd {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* ---- más como esto: tarjetas ---- */
+.titulo-seccion {
+  margin: 3.5rem 0 1.25rem;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.tarjeta {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.tarjeta-poster {
+  position: relative;
+  overflow: hidden;
+  container-type: inline-size;   /* para que la letra crezca con la tarjeta */
+  aspect-ratio: 2 / 3;
+  border: 1px solid hsl(0 0% 100% / 0.08);
+  border-radius: 1.5rem;
+  background:
+    radial-gradient(circle at 28% 24%, var(--color-1), transparent 42%),
+    radial-gradient(circle at 75% 76%, var(--color-2), transparent 45%),
+    color-mix(in srgb, var(--color-1) 30%, var(--fondo));
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tarjeta:hover .tarjeta-poster {
+  transform: translateY(-4px);
+  box-shadow: 0 1rem 2rem hsl(0 0% 0% / 0.4);
+}
+
+.tarjeta:focus-visible {
+  outline: 2px solid var(--acento);
+  outline-offset: 4px;
+  border-radius: 1.5rem;
+}
+
+.tarjeta-edad {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: hsl(0 0% 0% / 0.55);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.tarjeta-letra {
+  position: absolute;
+  right: -0.06em;
+  bottom: -0.22em;
+  font-size: 90cqi;
+  font-weight: 800;
+  line-height: 1;
+  color: hsl(0 0% 100% / 0.2);
+}
+
+/* el póster de la tarjeta tapa el degradé */
+.tarjeta-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.tarjeta-titulo {
+  margin: 0.75rem 0 0.1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.tarjeta-info {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+}
+
+/* ---- celular ---- */
+@media (max-width: 767px) {
+  .hero-detalle {
+    min-height: 20rem;
+    padding: 1.25rem;
+    border-radius: 1.5rem;
+  }
+
+  .hero-poster {
+    opacity: 0.6;
+  }
+
+  .titulo-seccion {
+    font-size: 1.6rem;
+  }
+}
