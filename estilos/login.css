@@ -1,9 +1,3 @@
-body {
-    background-color: var(--fondo);
-    color: var(--texto);
-    font-family: var(--fuente-texto);
-}
-
 .Formulario {
     max-width: 350px;
     gap: 10px;
