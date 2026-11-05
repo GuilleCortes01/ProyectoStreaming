@@ -1,0 +1,143 @@
+.Formulario {
+    max-width: 350px;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: var(--fondo-2);
+    color: var(--texto);
+    border: 1px solid var(--borde);
+}
+
+.Titulo {
+    font-family: var(--fuente-titulos);
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    position: relative;
+    padding-left: 30px;
+    color: var(--acento);
+}
+
+.Titulo::before,
+.Titulo::after {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 0;
+    background-color: var(--acento);
+}
+
+.Titulo::after {
+    animation: pulse 1s linear infinite;
+}
+
+.Mensaje,
+.IniciarSesion {
+    font-size: 14.5px;
+    color: var(--texto-suave);
+}
+
+.IniciarSesion a {
+    color: var(--acento);
+    text-decoration: none;
+}
+
+.IniciarSesion a:hover {
+    color: var(--acento-2);
+    text-decoration: underline;
+}
+
+.Formulario label {
+    position: relative;
+}
+
+.Formulario label .Campo {
+    background-color: var(--fondo-3);
+    color: var(--texto);
+    width: 100%;
+    font-family: var(--fuente-texto);
+    font-size: medium;
+    line-height: normal;
+    padding: 20px 5px 5px 10px;
+    outline: 0;
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+    transition: border-color 0.3s ease;
+}
+
+.Formulario label .Campo:focus {
+    border-color: var(--acento);
+}
+
+.Formulario label .Campo + span {
+    color: var(--texto-suave);
+    position: absolute;
+    left: 10px;
+    top: 0;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+}
+
+.Formulario label .Campo:placeholder-shown + span {
+    top: 12.5px;
+    font-size: 0.9em;
+}
+
+.Formulario label .Campo:focus + span,
+.Formulario label .Campo:not(:placeholder-shown) + span {
+    color: var(--acento);
+    top: 0;
+    font-size: 0.7em;
+    font-weight: 600;
+}
+
+.Error {
+    display: none;
+    margin-top: 4px;
+    font-size: 12px;
+    color: #ff6b6b;
+}
+
+.Formulario label .Campo:user-invalid {
+    border-color: #ff6b6b;
+}
+
+.Formulario label .Campo:user-invalid + span {
+    color: #ff6b6b;
+}
+
+.Formulario label .Campo:user-invalid ~ .Error {
+    display: block;
+}
+
+.BotonEnviar {
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+    color: var(--sobre-acento);
+    font-family: var(--fuente-texto);
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    background-color: var(--acento);
+}
+
+.BotonEnviar:hover {
+    background-color: var(--acento-2);
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(0.9);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}
