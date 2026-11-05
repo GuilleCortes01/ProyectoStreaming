@@ -24,3 +24,19 @@
   --fuente-texto: 'DM Sans', system-ui, 'Segoe UI', Roboto, sans-serif;
   color-scheme: dark;
 }
+
+/* ---- base de todas las páginas ---- */
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(45rem 35rem at 0% 80%, hsl(285 60% 30% / 0.22), transparent 70%),
+    radial-gradient(45rem 35rem at 100% 0%, hsl(var(--tono-celeste) 80% 40% / 0.16), transparent 70%),
+    var(--fondo);
+  background-attachment: fixed;
+  color: var(--texto);
+  font-family: var(--fuente-texto);
+}
+
+h1, h2, h3 {
+  font-family: var(--fuente-titulos);
+}
