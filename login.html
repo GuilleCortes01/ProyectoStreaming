@@ -21,42 +21,9 @@
     <main
       class="min-vh-100 d-flex align-items-center justify-content-center px-3 py-4"
     >
-      <form class="Formulario d-flex flex-column w-100">
+      <form class="Formulario d-flex flex-column w-100" action="index.html">
         <p class="Titulo d-flex align-items-center mb-0">Inicio de Sesión</p>
         <p class="Mensaje mb-0">Inicia sesión para acceder a tu cuenta.</p>
-
-        <div class="d-flex gap-2 w-100">
-          <label class="w-100">
-            <input
-              class="Campo"
-              type="text"
-              name="nombre"
-              placeholder=""
-              required
-              minlength="2"
-              maxlength="30"
-              pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü ]{2,30}"
-              title="Solo letras, entre 2 y 30 caracteres"
-            />
-            <span>Nombre</span>
-            <small class="Error">Solo letras, de 2 a 30 caracteres</small>
-          </label>
-          <label class="w-100">
-            <input
-              class="Campo"
-              type="text"
-              name="apellido"
-              placeholder=""
-              required
-              minlength="2"
-              maxlength="30"
-              pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü ]{2,30}"
-              title="Solo letras, entre 2 y 30 caracteres"
-            />
-            <span>Apellido</span>
-            <small class="Error">Solo letras, de 2 a 30 caracteres</small>
-          </label>
-        </div>
 
         <label>
           <input
@@ -96,7 +63,7 @@
 
         <button type="submit" class="BotonEnviar">Enviar</button>
         <p class="IniciarSesion text-center mb-0">
-          ¿No tienes una cuenta? <a href="#">Registrarse</a>
+          ¿No tienes una cuenta? <a href="registro.html">Registrarse</a>
         </p>
       </form>
     </main>
