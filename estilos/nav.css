@@ -1,0 +1,48 @@
+
+.navbar {
+  background-color: var(--barra);
+}
+
+.navbar .container-fluid {
+  padding: 0 1.5rem;
+  gap: 0.5rem 1rem;
+}
+
+.navbar .navbar-brand {
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--verde), var(--celeste));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+}
+
+.navbar .nav-link {
+  color: var(--texto-suave);
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: var(--texto);
+}
+
+.navbar form {
+  gap: 0.5rem;
+}
+
+.navbar .form-control:focus {
+  border-color: var(--celeste);
+  box-shadow:0.25rem rgba(91, 188, 240, 0.25);
+}
+
+.navbar .btn {
+  background-color: var(--celeste);
+  border-color: var(--celeste);
+  color: var(--fondo);
+  font-weight: 600;
+}
+
+.navbar .btn:hover {
+  background-color: var(--cian);
+  border-color: var(--cian);
+  color: var(--fondo);
+}

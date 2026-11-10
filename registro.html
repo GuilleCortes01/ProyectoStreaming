@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro | RollingMovie</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..800&display=swap"
+    />
+    <link rel="stylesheet" href="./estilos/style.css" />
+    <link rel="stylesheet" href="./estilos/login.css" />
+  </head>
+  <body>
+     <nav class="navbar navbar-expand">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">ROLLING MOVIES</a>
+
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="serie.html">Series</a></li>
+          <li class="nav-item"><a class="nav-link" href="peliculas.html">Películas</a></li>
+          <li class="nav-item"><a class="nav-link" href="404.html">Mi lista</a></li>
+        </ul>
+
+        <form class="d-flex ms-auto">
+          <input
+            class="form-control"
+            type="search"
+            placeholder="Buscar"
+            aria-label="Buscar"
+          />
+          <button class="btn" type="submit">Buscar</button>
+        </form>
+      </div>
+    </nav>
+    <main
+      class="min-vh-100 d-flex align-items-center justify-content-center px-3 py-4"
+    >
+      <form class="Formulario d-flex flex-column w-100" action="login.html">
+        <p class="Titulo d-flex align-items-center mb-0">Registro</p>
+        <p class="Mensaje mb-0">
+          Crea una cuenta para acceder a todas las funciones.
+        </p>
+
+        <div class="d-flex gap-2 w-100">
+          <label class="w-100">
+            <input
+              class="Campo"
+              type="text"
+              name="nombre"
+              placeholder=""
+              required
+              minlength="2"
+              maxlength="30"
+              pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü ]{2,30}"
+              title="Solo letras, entre 2 y 30 caracteres"
+            />
+            <span>Nombre</span>
+            <small class="Error">Solo letras, de 2 a 30 caracteres</small>
+          </label>
+          <label class="w-100">
+            <input
+              class="Campo"
+              type="text"
+              name="apellido"
+              placeholder=""
+              required
+              minlength="2"
+              maxlength="30"
+              pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü ]{2,30}"
+              title="Solo letras, entre 2 y 30 caracteres"
+            />
+            <span>Apellido</span>
+            <small class="Error">Solo letras, de 2 a 30 caracteres</small>
+          </label>
+        </div>
+
+        <label>
+          <input
+            class="Campo"
+            type="email"
+            name="email"
+            placeholder=""
+            required
+            maxlength="50"
+            pattern="[^@\s]+@[^@\s]+\.[A-Za-z]{2,}"
+            title="Ejemplo: usuario@correo.com"
+          />
+          <span>Email</span>
+          <small class="Error"
+            >Ingresá un email válido (ej: usuario@correo.com)</small
+          >
+        </label>
+
+        <label>
+          <input
+            class="Campo"
+            type="password"
+            name="contrasena"
+            placeholder=""
+            required
+            minlength="8"
+            maxlength="20"
+            pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,20}"
+            title="De 8 a 20 caracteres, con al menos una mayúscula, una minúscula y un número"
+          />
+          <span>Contraseña</span>
+          <small class="Error"
+            >De 8 a 20 caracteres, con una mayúscula, una minúscula y un
+            número</small
+          >
+        </label>
+
+        <label>
+          <input
+            class="Campo"
+            type="password"
+            name="confirmarContrasena"
+            placeholder=""
+            required
+            minlength="8"
+            maxlength="20"
+            pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,20}"
+            title="Repetí la contraseña"
+          />
+          <span>Confirmar contraseña</span>
+          <small class="Error"
+            >Repetí la contraseña: de 8 a 20 caracteres, con una mayúscula, una
+            minúscula y un número</small
+          >
+        </label>
+
+        <button type="submit" class="BotonEnviar">Registrarse</button>
+        <p class="IniciarSesion text-center mb-0">
+          ¿Ya tienes una cuenta? <a href="login.html">Iniciar sesión</a>
+        </p>
+      </form>
+    </main>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
