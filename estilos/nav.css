@@ -10,7 +10,8 @@
 
 .navbar .navbar-brand {
   font-weight: 700;
-  background: linear-gradient(90deg, var(--verde), var(--cian));
+  background: linear-gradient(90deg, var(--verde), var(--celeste));
+  -webkit-background-clip: text;
   background-clip: text;
   color: transparent !important;
 }
