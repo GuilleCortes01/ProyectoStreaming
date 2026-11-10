@@ -1,0 +1,198 @@
+/* ---- título de cada sección (Terror, Acción y aventura...) ---- */
+.titulo-seccion {
+  margin: 2.5rem 0 1.25rem;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+/* ---- la tarjeta entera es un link ---- */
+.tarjeta {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ---- la caja del póster: siempre mide 2 de ancho por 3 de alto ---- */
+.tarjeta-poster {
+  position: relative;   /* para poder ubicar la edad y la imagen adentro */
+  overflow: hidden;     /* corta la imagen en las puntas redondeadas */
+  aspect-ratio: 2 / 3;
+  border: 1px solid hsl(0 0% 100% / 0.08);
+  border-radius: 1.5rem;
+  background: var(--fondo-2);   /* se ve mientras carga la imagen */
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* al pasar el mouse, la tarjeta sube un poquito */
+.tarjeta:hover .tarjeta-poster {
+  transform: translateY(-4px);
+  box-shadow: 0 1rem 2rem hsl(0 0% 0% / 0.4);
+}
+
+.tarjeta:hover .tarjeta-titulo {
+  color: var(--acento);
+}
+
+/* borde celeste cuando se llega con el teclado (Tab) */
+.tarjeta:focus-visible {
+  outline: 2px solid var(--acento);
+  outline-offset: 4px;
+  border-radius: 1.5rem;
+}
+
+/* el póster llena toda la caja sin deformarse */
+.tarjeta-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* ---- la edad, arriba a la izquierda ---- */
+.tarjeta-edad {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: hsl(0 0% 0% / 0.55);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* ---- textos de abajo ---- */
+.tarjeta-titulo {
+  margin: 0.75rem 0 0.1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  transition: color 0.2s;
+}
+
+.tarjeta-info {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+}
+
+/* ---- celular ---- */
+@media (max-width: 767px) {
+  .titulo-seccion {
+    font-size: 1.6rem;
+  }
+
+  .tarjeta-poster {
+    border-radius: 1rem;
+  }
+
+  .tarjeta-titulo {
+    font-size: 1rem;
+  }
+}
+
+/* ==========================================================
+   CARTEL DE SUSCRIPCIÓN (entre las secciones)
+   ========================================================== */
+.promo {
+  position: relative;
+  isolation: isolate;   /* los círculos de adorno quedan atrás del texto */
+  overflow: hidden;     /* corta los círculos en el borde redondeado */
+  margin-top: 3rem;
+  padding: 3rem;
+  border: 1px solid hsl(0 0% 100% / 0.12);
+  border-radius: 1.5rem;
+  background:
+    radial-gradient(40rem 25rem at 100% 0%, hsl(255 60% 45% / 0.9), transparent 70%),
+    linear-gradient(135deg, hsl(var(--tono-celeste) 75% 38%) 0%, hsl(205 55% 20%) 100%);
+  color: hsl(0 0% 100%);
+}
+
+/* ---- los dos círculos de adorno ---- */
+.promo::before,
+.promo::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* el chico de arriba */
+.promo::before {
+  top: -5rem;
+  left: 47%;
+  width: 9rem;
+  height: 9rem;
+  border: 1.75rem solid hsl(0 0% 100% / 0.1);
+}
+
+/* el grande de abajo a la derecha */
+.promo::after {
+  right: -4rem;
+  bottom: -9rem;
+  width: 18rem;
+  height: 18rem;
+  border: 2.5rem solid hsl(0 0% 100% / 0.08);
+}
+
+/* ---- textos ---- */
+.promo-etiqueta {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  background: hsl(0 0% 100% / 0.15);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.promo-titulo {
+  margin: 1rem 0 0.75rem;
+  font-size: clamp(2rem, 5vw, 3.25rem);   /* se achica en pantallas chicas */
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.promo-texto {
+  margin: 0 0 1.75rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: hsl(0 0% 100% / 0.9);
+}
+
+/* ---- botón ---- */
+.promo-boton {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 999px;
+  background: var(--acento);
+  color: var(--sobre-acento);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.promo-boton:hover {
+  background: var(--acento-2);
+  color: var(--sobre-acento);
+  transform: translateY(-2px);
+}
+
+.promo-boton:focus-visible {
+  outline: 2px solid hsl(0 0% 100%);
+  outline-offset: 3px;
+}
+
+/* ---- celular ---- */
+@media (max-width: 767px) {
+  .promo {
+    padding: 2rem 1.5rem;
+  }
+
+  .promo-texto {
+    font-size: 1rem;
+  }
+}
