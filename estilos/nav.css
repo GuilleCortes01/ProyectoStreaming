@@ -1,6 +1,6 @@
 
 .navbar {
-  background-color: var(--barra);
+  background-color: var(--barra, hsl(200 20% 11%));
 }
 
 .navbar .container-fluid {
@@ -10,39 +10,101 @@
 
 .navbar .navbar-brand {
   font-weight: 700;
-  background: linear-gradient(90deg, var(--verde), var(--celeste));
-  -webkit-background-clip: text;
+  background: linear-gradient(90deg, var(--verde, hsl(152 70% 52%)), var(--cian, hsl(185 80% 55%)));
   background-clip: text;
+  -webkit-background-clip: text;
   color: transparent !important;
 }
 
 .navbar .nav-link {
-  color: var(--texto-suave);
+  color: var(--texto-suave, hsl(200 12% 70%));
 }
 
 .navbar .nav-link:hover,
 .navbar .nav-link.active {
-  color: var(--texto);
+  color: var(--texto, hsl(200 30% 95%));
 }
 
 .navbar form {
   gap: 0.5rem;
 }
 
+.navbar .form-control {
+  background-color: var(--fondo, hsl(200 24% 7%));
+  border-color: var(--borde, hsl(200 16% 24%));
+  color: var(--texto, hsl(200 30% 95%));
+}
+
+.navbar .form-control::placeholder {
+  color: var(--texto-suave, hsl(200 12% 70%));
+}
+
 .navbar .form-control:focus {
-  border-color: var(--celeste);
-  box-shadow:0.25rem rgba(91, 188, 240, 0.25);
+  border-color: var(--celeste, hsl(195 90% 60%));
+  box-shadow: 0 0 0 0.25rem rgba(91, 188, 240, 0.25);
 }
 
 .navbar .btn {
-  background-color: var(--celeste);
-  border-color: var(--celeste);
-  color: var(--fondo);
+  background-color: var(--celeste, hsl(195 90% 60%));
+  border-color: var(--celeste, hsl(195 90% 60%));
+  color: var(--fondo, hsl(200 24% 7%));
   font-weight: 600;
 }
 
 .navbar .btn:hover {
-  background-color: var(--cian);
-  border-color: var(--cian);
-  color: var(--fondo);
+  background-color: var(--cian, hsl(185 80% 55%));
+  border-color: var(--cian, hsl(185 80% 55%));
+  color: var(--fondo, hsl(200 24% 7%));
+}
+
+/* Logearme: solo borde, para diferenciarlo de Buscar */
+.navbar .btn-login {
+  background-color: transparent;
+  color: var(--celeste, hsl(195 90% 60%));
+}
+
+.navbar .btn-login:hover {
+  background-color: var(--celeste, hsl(195 90% 60%));
+  color: var(--fondo, hsl(200 24% 7%));
+}
+
+/* ---------- Pantallas grandes (992 px o más): menú completo ---------- */
+@media (min-width: 992px) {
+  .navbar .navbar-toggler {
+    display: none;
+  }
+
+  .navbar .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+    align-items: center;
+    height: auto !important;
+    visibility: visible !important;
+  }
+
+  .navbar .navbar-nav {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+}
+
+/* ---------- Celular y tablet: hamburguesa ---------- */
+@media (max-width: 991.98px) {
+  .navbar .navbar-collapse {
+    padding: 0.5rem 0 1rem;
+  }
+
+  .navbar form {
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+  }
+
+  /* El buscador ocupa todo el ancho y los dos botones quedan debajo, mitad y mitad */
+  .navbar form .form-control {
+    flex: 1 1 100%;
+  }
+
+  .navbar form .btn {
+    flex: 1;
+  }
 }
