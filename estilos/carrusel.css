@@ -1,17 +1,15 @@
-/* contenedor general */
 .contenedorCarrusel {
   position: relative;
   overflow: hidden;
   margin-inline: 6rem;
   margin: 2rem;
-  border-radius: 2.5rem; /*redondea esquinas*/
+  border-radius: 2.5rem;
 }
 
 body {
   background: var(--fondo);
 }
 
-/* estructura de cada diapositiva */
 .contenedorCarrusel .disenioDiapositiva {
   position: relative;
   display: flex;
@@ -22,14 +20,12 @@ body {
   isolation: isolate;
 }
 
-/* textos y botones */
 .contenedorCarrusel .textosBotones {
   width: 100%;
   max-width: 38rem;
   color: var(--texto);
 }
 
-/* etiqueta que sale arriba del titulo */
 .contenedorCarrusel .etiqueta {
   display: inline-block;
   padding: 0.35rem 0.85rem;
@@ -54,7 +50,6 @@ body {
   line-height: 1.6;
 }
 
-/* botones diapositiva (ver detalle - mi lista) */
 .contenedorCarrusel .botonesDiapositiva {
   display: flex;
   flex-wrap: wrap;
@@ -96,7 +91,6 @@ body {
   background: var(--fondo-3);
 }
 
-/* Capa de controles: cubre todo el banner */
 .contenedorCarrusel .flechasIndicadores {
   position: absolute;
   inset: 0;
@@ -110,7 +104,6 @@ body {
   pointer-events: auto;
 }
 
-/* flechas diapositivas */
 .contenedorCarrusel .flechasDiapositiva {
   position: absolute;
   top: 50%;
@@ -146,7 +139,6 @@ body {
   height: 1.1rem;
 }
 
-/* Indicadores inferiores */
 .contenedorCarrusel .carrusel-indicadores {
   position: absolute;
   inset: auto auto 1.75rem 50%;
@@ -178,7 +170,6 @@ body {
   background: var(--celeste);
 }
 
-/* imagen que ocupa toda la diapositiva */
 .contenedorCarrusel .imagen {
   position: absolute;
   inset: 0;
@@ -189,7 +180,6 @@ body {
   object-position: center;
 }
 
-/* oscurecer imagen */
 .contenedorCarrusel .disenioDiapositiva::after {
   content: "";
   position: absolute;
