@@ -56,7 +56,6 @@
   color: var(--fondo, hsl(200 24% 7%));
 }
 
-/* Logearme: solo borde, para diferenciarlo de Buscar */
 .navbar .btn-login {
   background-color: transparent;
   color: var(--celeste, hsl(195 90% 60%));
@@ -67,8 +66,6 @@
   color: var(--fondo, hsl(200 24% 7%));
 }
 
-/* ---------- Hamburguesa ---------- */
-/* Bootstrap la oculta solo cuando la barra mide 1024 px o más (clase lg:navbar-expand) */
 .navbar .navbar-toggler {
   display: inline-flex;
   width: 2.5rem;
@@ -91,13 +88,11 @@
   outline-offset: 2px;
 }
 
-/* Fondo oscuro detrás del panel cuando está abierto */
 .navbar .drawer::backdrop {
   background-color: hsl(200 24% 7% / 0.7);
   backdrop-filter: blur(4px);
 }
 
-/* ---------- Celular y tablet: panel que sale desde la derecha ---------- */
 @container (width < 1024px) {
   .navbar .drawer {
     --bs-drawer-width: min(20rem, 85vw);
@@ -135,7 +130,6 @@
     overflow-y: auto;
   }
 
-  /* Links uno debajo del otro, grandes para tocarlos con el dedo */
   .navbar .drawer .navbar-nav {
     gap: 0;
   }
@@ -154,7 +148,6 @@
     color: var(--celeste, hsl(195 90% 60%));
   }
 
-  /* El buscador ocupa todo el ancho y los botones quedan debajo, mitad y mitad */
   .navbar .drawer form {
     flex-wrap: wrap;
   }
@@ -168,7 +161,6 @@
   }
 }
 
-/* ---------- Pantallas grandes: menú completo en la barra ---------- */
 @container (width >= 1024px) {
   .navbar .drawer-body {
     gap: 1rem;
