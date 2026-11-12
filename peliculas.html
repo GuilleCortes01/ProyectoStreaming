@@ -1,64 +1,357 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..800&display=swap">
-    <link rel="stylesheet" href="./estilos/style.css">
-    <link rel="stylesheet" href="./estilos/nav.css">
-    <title>Document</title>
-</head>
-<body>
-     <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="index.html">ROLLING MOVIES</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..800&display=swap"
+    />
+    <link rel="stylesheet" href="./estilos/style.css" />
+    <link rel="stylesheet" href="./estilos/nav.css" />
+    <link rel="stylesheet" href="./estilos/peliculas.css" />
+    <link rel="icon" type="image/png" href="./img/favicon.png" />
+    <title>Películas | ROLLING MOVIES</title>
+  </head>
+  <body>
+    <nav class="navbar lg:navbar-expand" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">ROLLING MOVIES</a>
 
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#menuNavegacion"
-      aria-controls="menuNavegacion"
-      aria-expanded="false"
-      aria-label="Abrir menú"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
+        <button
+          class="btn-icon navbar-toggler"
+          type="button"
+          data-bs-toggle="drawer"
+          data-bs-target="#menuNavegacion"
+          aria-controls="menuNavegacion"
+          aria-expanded="false"
+          aria-label="Abrir menú"
+        >
+          <span class="navbar-toggler-icon" aria-hidden="true"></span>
+        </button>
 
-    <div class="collapse navbar-collapse" id="menuNavegacion">
-      <ul class="navbar-nav mb-2 lg:mb-0">
-        <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="serie.html">Series</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Películas</a></li>
-        <li class="nav-item"><a class="nav-link" href="suscripcion.html">Suscribirme</a></li>
-      </ul>
+        <dialog
+          class="drawer drawer-end"
+          tabindex="-1"
+          id="menuNavegacion"
+          aria-labelledby="menuNavegacionTitulo"
+        >
+          <div class="drawer-header">
+            <h2 class="drawer-title navbar-brand" id="menuNavegacionTitulo">
+              ROLLING MOVIES
+            </h2>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="drawer"
+              aria-label="Cerrar menú"
+            ></button>
+          </div>
 
-      <form class="d-flex" role="search">
-        <input class="form-control" type="search" placeholder="Buscar" aria-label="Buscar" />
-        <button class="btn" type="submit">Buscar</button>
-        <a class="btn btn-login" href="#">Logearme</a>
-      </form>
-    </div>
-  </div>
-</nav>
+          <div class="drawer-body">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="serie.html">Series</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  href="peliculas.html"
+                  aria-current="page"
+                  >Películas</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="suscripcion.html">Suscribirme</a>
+              </li>
+            </ul>
+
+            <form class="d-flex" role="search">
+              <input
+                class="form-control"
+                type="search"
+                placeholder="Buscar"
+                aria-label="Buscar"
+              />
+              <button class="btn" type="submit">Buscar</button>
+              <a class="btn btn-login" href="login.html">Login</a>
+            </form>
+          </div>
+        </dialog>
+      </div>
+    </nav>
+
+    <main class="container py-8">
+      <h1 class="titulo-pagina">Películas</h1>
+      <p class="subtitulo-pagina">
+        Terror, acción, fantasía y romance. Elegí qué ver hoy.
+      </p>
+
+      <section>
+        <h2 class="titulo-seccion">Terror</h2>
+        <div class="row row-cols-2 md:row-cols-3 lg:row-cols-5 g-6">
+          <div class="col">
+            <a href="terror.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/It (2017), de Andy Muschietti.jpg"
+                  alt="Póster de It"
+                />
+                <span class="tarjeta-edad">+16</span>
+              </div>
+              <h3 class="tarjeta-titulo">It</h3>
+              <p class="tarjeta-info">Película · 2017</p>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/apocalipsis-z-nuevo-mundo.png"
+                  alt="Póster de Apocalipsis Z: Nuevo mundo"
+                />
+                <span class="tarjeta-edad">+16</span>
+              </div>
+              <h3 class="tarjeta-titulo">Apocalipsis Z: Nuevo mundo</h3>
+              <p class="tarjeta-info">Película · 2026</p>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/conjuring_poster_jpg (1600×1067).jpg"
+                  alt="Póster de El Conjuro"
+                />
+                <span class="tarjeta-edad">+16</span>
+              </div>
+              <h3 class="tarjeta-titulo">El Conjuro</h3>
+              <p class="tarjeta-info">Película · 2013</p>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/Vuelven (2017).jpg"
+                  alt="Póster de Vuelven"
+                />
+                <span class="tarjeta-edad">+16</span>
+              </div>
+              <h3 class="tarjeta-titulo">Vuelven</h3>
+              <p class="tarjeta-info">Película · 2017</p>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/La Monja 2 (2023).jpg"
+                  alt="Póster de La monja 2"
+                />
+                <span class="tarjeta-edad">+16</span>
+              </div>
+              <h3 class="tarjeta-titulo">La monja 2</h3>
+              <p class="tarjeta-info">Película · 2023</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="titulo-seccion">Acción y aventura</h2>
+        <div class="row row-cols-2 md:row-cols-3 lg:row-cols-5 g-6">
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/la-guerra-de-los-ultimos.png"
+                  alt="Póster de La guerra de los últimos"
+                />
+                <span class="tarjeta-edad">+13</span>
+              </div>
+              <h3 class="tarjeta-titulo">La guerra de los últimos</h3>
+              <p class="tarjeta-info">Película · 2026</p>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/Deadpool 2.jpg"
+                  alt="Póster de Deadpool 2"
+                />
+                <span class="tarjeta-edad">+16</span>
+              </div>
+              <h3 class="tarjeta-titulo">Deadpool 2</h3>
+              <p class="tarjeta-info">Película · 2018</p>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/descarga.jpg"
+                  alt="Póster de Maze Runner: Correr o morir"
+                />
+                <span class="tarjeta-edad">+13</span>
+              </div>
+              <h3 class="tarjeta-titulo">Maze Runner: Correr o morir</h3>
+              <p class="tarjeta-info">Película · 2014</p>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/Hasta el último hombre (póster) - 2016_.jpg"
+                  alt="Póster de Hasta el último hombre"
+                />
+                <span class="tarjeta-edad">+16</span>
+              </div>
+              <h3 class="tarjeta-titulo">Hasta el último hombre</h3>
+              <p class="tarjeta-info">Película · 2016</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="titulo-seccion">Fantasía</h2>
+        <div class="row row-cols-2 md:row-cols-3 lg:row-cols-5 g-6">
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/The Hobbit An Unexpected Journey.jpg"
+                  alt="Póster de El Hobbit: Un viaje inesperado"
+                />
+                <span class="tarjeta-edad">+13</span>
+              </div>
+              <h3 class="tarjeta-titulo">El Hobbit: Un viaje inesperado</h3>
+              <p class="tarjeta-info">Película · 2012</p>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/coraline.jpg"
+                  alt="Póster de Coraline"
+                />
+                <span class="tarjeta-edad">ATP</span>
+              </div>
+              <h3 class="tarjeta-titulo">Coraline</h3>
+              <p class="tarjeta-info">Película · 2009</p>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/Alicia in Wonderland.jpg"
+                  alt="Póster de Alicia en el país de las maravillas"
+                />
+                <span class="tarjeta-edad">ATP</span>
+              </div>
+              <h3 class="tarjeta-titulo">
+                Alicia en el país de las maravillas
+              </h3>
+              <p class="tarjeta-info">Película · 2010</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="titulo-seccion">Romance y drama</h2>
+        <div class="row row-cols-2 md:row-cols-3 lg:row-cols-5 g-6">
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/Corazones Malheridos.jpg"
+                  alt="Póster de Corazones malheridos"
+                />
+                <span class="tarjeta-edad">+13</span>
+              </div>
+              <h3 class="tarjeta-titulo">Corazones malheridos</h3>
+              <p class="tarjeta-info">Película · 2022</p>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/A dos metros de ti (2019).jpg"
+                  alt="Póster de A dos metros de ti"
+                />
+                <span class="tarjeta-edad">+13</span>
+              </div>
+              <h3 class="tarjeta-titulo">A dos metros de ti</h3>
+              <p class="tarjeta-info">Película · 2019</p>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
     <footer class="footer">
-  <div class="footercontainer">
-    <div class="footerleft">
-      <h3>Rolling Movies</h3>
-      <p>Tu catálogo de películas favorito.</p>
-    </div>
+      <div class="footercontainer">
+        <div class="footerleft">
+          <h3>Rolling Movies</h3>
+          <p>Tu catálogo de películas favorito.</p>
+        </div>
 
-    <div class="footerlinks">
-      <a href="#sobrenosotros">Sobre nosotros</a>
-      <a href="#preguntasfrecuentes">Preguntas frecuentes y ayuda</a>
-      <a href="#contacto">Contactanos</a>
-    </div>
+        <div class="footerlinks">
+          <a href="#sobrenosotros">Sobre nosotros</a>
+          <a href="#preguntasfrecuentes">Preguntas frecuentes y ayuda</a>
+          <a href="#contacto">Contactanos</a>
+        </div>
+      </div>
 
-  </div>
-
-  <p class="footercopy">© <span id="year"></span> RollingMovie. Todos los derechos reservados.</p>
-</footer>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL" crossorigin="anonymous"></script>
-</body>
+      <p class="footercopy">
+        © <span id="year"></span> RollingMovie. Todos los derechos reservados.
+      </p>
+    </footer>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

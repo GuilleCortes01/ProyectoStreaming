@@ -1,11 +1,9 @@
 :root {
-  /* ---- los dos colores de la página ---- */
   --verde: hsl(152 70% 52%);
   --celeste: hsl(195 90% 60%);
   --tono-verde: 152;
   --tono-celeste: 195;
 
-  /* ---- fondo y neutros (siguen igual que antes) ---- */
   --tono: 200;
   --fondo: hsl(var(--tono) 24% 7%);
   --fondo-2: hsl(var(--tono) 20% 11%);
@@ -14,18 +12,15 @@
   --texto: hsl(var(--tono) 30% 95%);
   --texto-suave: hsl(var(--tono) 12% 70%);
 
-  /* ---- uso de los colores ---- */
-  --acento: var(--celeste);   /* botones, links, detalles */
+  --acento: var(--celeste);
   --acento-2: var(--verde);
-  --sobre-acento: hsl(var(--tono) 45% 8%);   /* texto arriba de un botón */
+  --sobre-acento: hsl(var(--tono) 45% 8%);
 
-  /* ---- tipografía: DM Sans ---- */
   --fuente-titulos: 'DM Sans', system-ui, 'Segoe UI', Roboto, sans-serif;
   --fuente-texto: 'DM Sans', system-ui, 'Segoe UI', Roboto, sans-serif;
   color-scheme: dark;
 }
 
-/* ---- base de todas las páginas ---- */
 body {
   min-height: 100vh;
   background:

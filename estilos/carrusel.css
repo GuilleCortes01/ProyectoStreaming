@@ -1,35 +1,26 @@
-/* contenedor general */
 .contenedorCarrusel {
   position: relative;
   overflow: hidden;
-  margin-inline: 6rem;
-  margin: 2rem;
-  border-radius: 2.5rem; /*redondea esquinas*/
+  border-radius: 2.5rem;
 }
 
 body {
   background: var(--fondo);
 }
 
-/* estructura de cada diapositiva */
 .contenedorCarrusel .disenioDiapositiva {
   position: relative;
   display: flex;
-  align-items: flex-end;
-  min-height: 34rem;
   overflow: hidden;
-  padding: 4.5rem 4rem 3rem 6rem;
   isolation: isolate;
 }
 
-/* textos y botones */
 .contenedorCarrusel .textosBotones {
   width: 100%;
   max-width: 38rem;
   color: var(--texto);
 }
 
-/* etiqueta que sale arriba del titulo */
 .contenedorCarrusel .etiqueta {
   display: inline-block;
   padding: 0.35rem 0.85rem;
@@ -41,7 +32,7 @@ body {
 
 .contenedorCarrusel .titulo {
   margin: 0.65rem 0 1rem;
-  font-size: clamp(2.2rem, 4.5vw, 4rem);
+  font-size: clamp(1.5rem, 4.5vw, 4rem);
   font-weight: 800;
   line-height: 1.05;
   letter-spacing: -0.05em;
@@ -54,7 +45,6 @@ body {
   line-height: 1.6;
 }
 
-/* botones diapositiva (ver detalle - mi lista) */
 .contenedorCarrusel .botonesDiapositiva {
   display: flex;
   flex-wrap: wrap;
@@ -96,7 +86,6 @@ body {
   background: var(--fondo-3);
 }
 
-/* Capa de controles: cubre todo el banner */
 .contenedorCarrusel .flechasIndicadores {
   position: absolute;
   inset: 0;
@@ -110,11 +99,9 @@ body {
   pointer-events: auto;
 }
 
-/* flechas diapositivas */
 .contenedorCarrusel .flechasDiapositiva {
   position: absolute;
   top: 50%;
-  display: flex;
   align-items: center;
   justify-content: center;
   width: 3.25rem;
@@ -146,7 +133,6 @@ body {
   height: 1.1rem;
 }
 
-/* Indicadores inferiores */
 .contenedorCarrusel .carrusel-indicadores {
   position: absolute;
   inset: auto auto 1.75rem 50%;
@@ -178,7 +164,10 @@ body {
   background: var(--celeste);
 }
 
-/* imagen que ocupa toda la diapositiva */
+.contenedorCarrusel .disenioDiapositiva {
+  aspect-ratio: 16 / 9;
+}
+
 .contenedorCarrusel .imagen {
   position: absolute;
   inset: 0;
@@ -189,12 +178,17 @@ body {
   object-position: center;
 }
 
-/* oscurecer imagen */
 .contenedorCarrusel .disenioDiapositiva::after {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(to right, rgb(0 0 0 / 50%), rgb(0 0 0 / 0%));
+  background: linear-gradient(to right, rgb(0 0 0 / 60%), rgb(0 0 0 / 0%));
   pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .contenedorCarrusel .disenioDiapositiva {
+    aspect-ratio: 1942 / 809;
+  }
 }

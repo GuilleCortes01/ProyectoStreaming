@@ -93,12 +93,6 @@ small {
 }
 
 
-/* ==========================================================
-   AGREGADOS: los pasos de la pasarela, todo con CSS (sin JS)
-   ========================================================== */
-
-/* el ancho de los inputs incluye el padding y el borde
-   (si no, se salen del recuadro) */
 *,
 *::before,
 *::after {
@@ -106,7 +100,7 @@ small {
 }
 
 fieldset {
-  min-width: 0;   /* evita que el fieldset se estire en celular */
+  min-width: 0;
 }
 
 h1 a {
@@ -114,10 +108,9 @@ h1 a {
   text-decoration: none;
 }
 
-/* ---- paso 1: cada plan es una opción clickeable ---- */
 .opcion-plan {
   display: flex;
-  flex-wrap: wrap;   /* los beneficios bajan a una segunda línea */
+  flex-wrap: wrap;
   align-items: center;
   gap: 12px;
   margin-top: 10px;
@@ -137,7 +130,6 @@ h1 a {
   border-color: var(--texto-suave);
 }
 
-/* el plan marcado queda celeste */
 .opcion-plan:has(input:checked) {
   border-color: var(--acento);
   background: hsl(var(--tono-celeste) 60% 50% / 0.12);
@@ -179,12 +171,11 @@ h1 a {
   vertical-align: middle;
 }
 
-/* ---- beneficios de cada plan (uno abajo del otro) ---- */
 .opcion-beneficios {
-  flex-basis: 100%;   /* ocupa todo el ancho, en su propia línea */
+  flex-basis: 100%;
   display: grid;
   gap: 8px;
-  margin-left: 30px;   /* queda alineado con el nombre del plan, no con el círculo */
+  margin-left: 30px;
   padding-top: 12px;
   border-top: 1px solid var(--borde);
 }
@@ -196,7 +187,6 @@ h1 a {
   font-size: 0.85rem;
 }
 
-/* el círculo verde con el tilde */
 .opcion-beneficios span::before {
   content: "";
   flex-shrink: 0;
@@ -209,7 +199,6 @@ h1 a {
     var(--acento-2);
 }
 
-/* ---- aviso que se ve mientras no hay plan elegido ---- */
 .aviso {
   margin: 0;
   padding: 12px 16px;
@@ -219,10 +208,6 @@ h1 a {
   text-align: center;
 }
 
-/* ==========================================================
-   ACÁ ESTÁ EL TRUCO: los pasos 2, 3 y 4 empiezan ocultos y
-   aparecen cuando el formulario "tiene" (:has) un plan marcado
-   ========================================================== */
 .despues-del-plan {
   display: none;
 }
@@ -235,7 +220,6 @@ form:has(input[name="plan"]:checked) .aviso {
   display: none;
 }
 
-/* ---- paso 2: campos ---- */
 .campo {
   margin-bottom: 14px;
 }
@@ -250,25 +234,20 @@ form:has(input[name="plan"]:checked) .aviso {
   font-size: 0.9rem;
 }
 
-/* borde rojo cuando un campo quedó mal (después de escribir) */
 input:user-invalid {
   border-color: hsl(0 75% 62%);
 }
 
-/* ==========================================================
-   PASO 3: LA TARJETA DE CRÉDITO
-   Basada en Uiverse.io (vinodjangid07), con los colores de la página
-   ========================================================== */
 .tarjeta-credito {
   position: relative;
-  isolation: isolate;   /* el círculo de adorno queda atrás de los campos */
-  overflow: hidden;     /* corta el círculo en las puntas redondeadas */
+  isolation: isolate;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 16px;
   max-width: 420px;
-  aspect-ratio: 1.586;  /* la proporción de una tarjeta de verdad */
+  aspect-ratio: 1.586;
   margin: 4px auto 0;
   padding: 20px;
   border-radius: 14px;
@@ -283,7 +262,6 @@ input:user-invalid {
   color: hsl(0 0% 100%);
 }
 
-/* círculo de adorno arriba a la derecha (como en el cartel del index) */
 .tarjeta-credito::before {
   content: "";
   position: absolute;
@@ -296,14 +274,12 @@ input:user-invalid {
   border-radius: 50%;
 }
 
-/* ---- arriba: chip y símbolo sin contacto ---- */
 .tarjeta-arriba {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* el chip dorado, hecho solo con degradés */
 .tarjeta-chip {
   width: 42px;
   height: 32px;
@@ -320,7 +296,6 @@ input:user-invalid {
   opacity: 0.85;
 }
 
-/* ---- etiquetas: chiquitas y en mayúscula, como en una tarjeta ---- */
 .tarjeta-credito label {
   display: block;
   font-size: 0.65rem;
@@ -329,7 +304,6 @@ input:user-invalid {
   color: hsl(0 0% 100% / 0.75);
 }
 
-/* ---- campos: transparentes, con una rayita abajo ---- */
 .tarjeta-credito input {
   width: 100%;
   padding: 4px 0;
@@ -347,45 +321,37 @@ input:user-invalid {
   color: hsl(0 0% 100% / 0.55);
 }
 
-/* al escribir, la rayita se pone blanca y más gruesa */
 .tarjeta-credito input:focus {
   outline: none;
   border-bottom-color: hsl(0 0% 100%);
   box-shadow: 0 1px 0 hsl(0 0% 100%);
 }
 
-/* si el dato quedó mal, la rayita se pone roja */
 .tarjeta-credito input:user-invalid {
   border-bottom-color: hsl(0 100% 75%);
   box-shadow: 0 1px 0 hsl(0 100% 75%);
 }
 
-/* el número, más grande */
 .tarjeta-numero input {
   font-size: 1.2rem;
   letter-spacing: 2px;
   font-variant-numeric: tabular-nums;
 }
 
-/* el titular se ve en mayúsculas, como en las tarjetas */
 #titular {
   text-transform: uppercase;
 }
 
-/* ---- abajo: titular ancho, vencimiento y CVV angostos ---- */
 .tarjeta-abajo {
   display: grid;
   grid-template-columns: 1fr 4.5rem 3.5rem;
   gap: 12px;
 }
 
-/* ---- paso 4: resumen ---- */
-/* los tres resúmenes empiezan ocultos... */
 .resumen {
   display: none;
 }
 
-/* ...y se muestra solo el del plan marcado */
 form:has(#plan-basico:checked) .resumen-basico,
 form:has(#plan-estandar:checked) .resumen-estandar,
 form:has(#plan-premium:checked) .resumen-premium {
@@ -444,10 +410,6 @@ button:focus-visible {
   outline-offset: 2px;
 }
 
-/* ==========================================================
-   PAGO CONFIRMADO: :target se activa cuando la dirección
-   termina en #pago-confirmado (eso pasa al tocar "Pagar")
-   ========================================================== */
 .exito {
   display: none;
   padding: 32px 20px;
@@ -461,7 +423,6 @@ button:focus-visible {
   display: block;
 }
 
-/* cuando se ve el mensaje, se esconde el formulario */
 body:has(.exito:target) form {
   display: none;
 }
