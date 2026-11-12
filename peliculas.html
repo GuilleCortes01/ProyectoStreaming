@@ -15,7 +15,9 @@
     />
     <link rel="stylesheet" href="./estilos/style.css" />
     <link rel="stylesheet" href="./estilos/nav.css" />
-    <title>ROLLING MOVIES</title>
+    <link rel="stylesheet" href="./estilos/peliculas.css" />
+    <link rel="icon" type="image/png" href="./img/favicon.png" />
+    <title>Películas | ROLLING MOVIES</title>
   </head>
   <body>
     <nav class="navbar lg:navbar-expand" data-bs-theme="dark">
@@ -55,10 +57,18 @@
           <div class="drawer-body">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" href="index.html">Inicio</a>
+                <a class="nav-link" href="index.html">Inicio</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="serie.html">Series</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  href="peliculas.html"
+                  aria-current="page"
+                  >Películas</a
+                >
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="suscripcion.html">Suscribirme</a>
@@ -79,6 +89,246 @@
         </dialog>
       </div>
     </nav>
+
+    <main class="container py-8">
+      <h1 class="titulo-pagina">Películas</h1>
+      <p class="subtitulo-pagina">
+        Terror, acción, fantasía y romance. Elegí qué ver hoy.
+      </p>
+
+      <section>
+        <h2 class="titulo-seccion">Terror</h2>
+        <div class="row row-cols-2 md:row-cols-3 lg:row-cols-5 g-6">
+          <div class="col">
+            <a href="terror.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/It (2017), de Andy Muschietti.jpg"
+                  alt="Póster de It"
+                />
+                <span class="tarjeta-edad">+16</span>
+              </div>
+              <h3 class="tarjeta-titulo">It</h3>
+              <p class="tarjeta-info">Película · 2017</p>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/apocalipsis-z-nuevo-mundo.png"
+                  alt="Póster de Apocalipsis Z: Nuevo mundo"
+                />
+                <span class="tarjeta-edad">+16</span>
+              </div>
+              <h3 class="tarjeta-titulo">Apocalipsis Z: Nuevo mundo</h3>
+              <p class="tarjeta-info">Película · 2026</p>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/conjuring_poster_jpg (1600×1067).jpg"
+                  alt="Póster de El Conjuro"
+                />
+                <span class="tarjeta-edad">+16</span>
+              </div>
+              <h3 class="tarjeta-titulo">El Conjuro</h3>
+              <p class="tarjeta-info">Película · 2013</p>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/Vuelven (2017).jpg"
+                  alt="Póster de Vuelven"
+                />
+                <span class="tarjeta-edad">+16</span>
+              </div>
+              <h3 class="tarjeta-titulo">Vuelven</h3>
+              <p class="tarjeta-info">Película · 2017</p>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/La Monja 2 (2023).jpg"
+                  alt="Póster de La monja 2"
+                />
+                <span class="tarjeta-edad">+16</span>
+              </div>
+              <h3 class="tarjeta-titulo">La monja 2</h3>
+              <p class="tarjeta-info">Película · 2023</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="titulo-seccion">Acción y aventura</h2>
+        <div class="row row-cols-2 md:row-cols-3 lg:row-cols-5 g-6">
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/la-guerra-de-los-ultimos.png"
+                  alt="Póster de La guerra de los últimos"
+                />
+                <span class="tarjeta-edad">+13</span>
+              </div>
+              <h3 class="tarjeta-titulo">La guerra de los últimos</h3>
+              <p class="tarjeta-info">Película · 2026</p>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/Deadpool 2.jpg"
+                  alt="Póster de Deadpool 2"
+                />
+                <span class="tarjeta-edad">+16</span>
+              </div>
+              <h3 class="tarjeta-titulo">Deadpool 2</h3>
+              <p class="tarjeta-info">Película · 2018</p>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/descarga.jpg"
+                  alt="Póster de Maze Runner: Correr o morir"
+                />
+                <span class="tarjeta-edad">+13</span>
+              </div>
+              <h3 class="tarjeta-titulo">Maze Runner: Correr o morir</h3>
+              <p class="tarjeta-info">Película · 2014</p>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/Hasta el último hombre (póster) - 2016_.jpg"
+                  alt="Póster de Hasta el último hombre"
+                />
+                <span class="tarjeta-edad">+16</span>
+              </div>
+              <h3 class="tarjeta-titulo">Hasta el último hombre</h3>
+              <p class="tarjeta-info">Película · 2016</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="titulo-seccion">Fantasía</h2>
+        <div class="row row-cols-2 md:row-cols-3 lg:row-cols-5 g-6">
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/The Hobbit An Unexpected Journey.jpg"
+                  alt="Póster de El Hobbit: Un viaje inesperado"
+                />
+                <span class="tarjeta-edad">+13</span>
+              </div>
+              <h3 class="tarjeta-titulo">El Hobbit: Un viaje inesperado</h3>
+              <p class="tarjeta-info">Película · 2012</p>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/coraline.jpg"
+                  alt="Póster de Coraline"
+                />
+                <span class="tarjeta-edad">ATP</span>
+              </div>
+              <h3 class="tarjeta-titulo">Coraline</h3>
+              <p class="tarjeta-info">Película · 2009</p>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/Alicia in Wonderland.jpg"
+                  alt="Póster de Alicia en el país de las maravillas"
+                />
+                <span class="tarjeta-edad">ATP</span>
+              </div>
+              <h3 class="tarjeta-titulo">
+                Alicia en el país de las maravillas
+              </h3>
+              <p class="tarjeta-info">Película · 2010</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="titulo-seccion">Romance y drama</h2>
+        <div class="row row-cols-2 md:row-cols-3 lg:row-cols-5 g-6">
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/Corazones Malheridos.jpg"
+                  alt="Póster de Corazones malheridos"
+                />
+                <span class="tarjeta-edad">+13</span>
+              </div>
+              <h3 class="tarjeta-titulo">Corazones malheridos</h3>
+              <p class="tarjeta-info">Película · 2022</p>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/A dos metros de ti (2019).jpg"
+                  alt="Póster de A dos metros de ti"
+                />
+                <span class="tarjeta-edad">+13</span>
+              </div>
+              <h3 class="tarjeta-titulo">A dos metros de ti</h3>
+              <p class="tarjeta-info">Película · 2019</p>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
     <footer class="footer">
       <div class="footercontainer">
         <div class="footerleft">
