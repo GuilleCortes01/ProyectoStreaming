@@ -1,0 +1,505 @@
+:root {
+  --verde: hsl(152 70% 52%);
+  --celeste: hsl(195 90% 60%);
+  --tono-verde: 152;
+  --tono-celeste: 195;
+
+  --tono: 200;
+  --fondo: hsl(var(--tono) 24% 7%);
+  --fondo-2: hsl(var(--tono) 20% 11%);
+  --fondo-3: hsl(var(--tono) 18% 16%);
+  --borde: hsl(var(--tono) 16% 24%);
+  --texto: hsl(var(--tono) 30% 95%);
+  --texto-suave: hsl(var(--tono) 12% 70%);
+
+  --acento: var(--celeste);
+  --acento-2: var(--verde);
+  --sobre-acento: hsl(var(--tono) 45% 8%);
+
+  --fuente-titulos: 'DM Sans', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --fuente-texto: 'DM Sans', system-ui, 'Segoe UI', Roboto, sans-serif;
+  color-scheme: dark;
+}
+
+body {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: var(--fuente-texto);
+}
+
+h1 {
+  text-align: center;
+  font-family: var(--fuente-titulos);
+  color: var(--acento);
+}
+
+h2 {
+  text-align: center;
+  font-family: var(--fuente-titulos);
+  font-weight: normal;
+  color: var(--texto-suave);
+}
+
+fieldset {
+  margin-bottom: 16px;
+  padding: 16px;
+  background: var(--fondo-2);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+}
+
+legend {
+  color: var(--acento-2);
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  font-family: inherit;
+  color: var(--texto);
+  background: var(--fondo-3);
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+}
+
+input:focus {
+  outline: 2px solid var(--acento);
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  font-family: inherit;
+  font-weight: bold;
+  color: var(--sobre-acento);
+  background: var(--acento);
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--acento-2);
+}
+
+small {
+  color: var(--texto-suave);
+}
+
+
+/* ==========================================================
+   AGREGADOS: los pasos de la pasarela, todo con CSS (sin JS)
+   ========================================================== */
+
+/* el ancho de los inputs incluye el padding y el borde
+   (si no, se salen del recuadro) */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+fieldset {
+  min-width: 0;   /* evita que el fieldset se estire en celular */
+}
+
+h1 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ---- paso 1: cada plan es una opción clickeable ---- */
+.opcion-plan {
+  display: flex;
+  flex-wrap: wrap;   /* los beneficios bajan a una segunda línea */
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+  padding: 14px;
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  background: var(--fondo-3);
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.opcion-plan:first-of-type {
+  margin-top: 4px;
+}
+
+.opcion-plan:hover {
+  border-color: var(--texto-suave);
+}
+
+/* el plan marcado queda celeste */
+.opcion-plan:has(input:checked) {
+  border-color: var(--acento);
+  background: hsl(var(--tono-celeste) 60% 50% / 0.12);
+}
+
+.opcion-plan input {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--acento);
+}
+
+.opcion-texto {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.opcion-precio {
+  font-size: 1.4rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.opcion-precio small {
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.opcion-cartel {
+  margin-left: 4px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--acento-2);
+  color: var(--sobre-acento);
+  font-size: 0.7rem;
+  vertical-align: middle;
+}
+
+/* ---- beneficios de cada plan (uno abajo del otro) ---- */
+.opcion-beneficios {
+  flex-basis: 100%;   /* ocupa todo el ancho, en su propia línea */
+  display: grid;
+  gap: 8px;
+  margin-left: 30px;   /* queda alineado con el nombre del plan, no con el círculo */
+  padding-top: 12px;
+  border-top: 1px solid var(--borde);
+}
+
+.opcion-beneficios span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+}
+
+/* el círculo verde con el tilde */
+.opcion-beneficios span::before {
+  content: "";
+  flex-shrink: 0;
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 50%;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230b171e'%3E%3Cpath fill-rule='evenodd' d='M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z' clip-rule='evenodd'/%3E%3C/svg%3E")
+    center / 0.75rem no-repeat,
+    var(--acento-2);
+}
+
+/* ---- aviso que se ve mientras no hay plan elegido ---- */
+.aviso {
+  margin: 0;
+  padding: 12px 16px;
+  border: 1px dashed var(--borde);
+  border-radius: 10px;
+  color: var(--texto-suave);
+  text-align: center;
+}
+
+/* ==========================================================
+   ACÁ ESTÁ EL TRUCO: los pasos 2, 3 y 4 empiezan ocultos y
+   aparecen cuando el formulario "tiene" (:has) un plan marcado
+   ========================================================== */
+.despues-del-plan {
+  display: none;
+}
+
+form:has(input[name="plan"]:checked) .despues-del-plan {
+  display: block;
+}
+
+form:has(input[name="plan"]:checked) .aviso {
+  display: none;
+}
+
+/* ---- paso 2: campos ---- */
+.campo {
+  margin-bottom: 14px;
+}
+
+.campo:last-child {
+  margin-bottom: 0;
+}
+
+.campo label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+}
+
+/* borde rojo cuando un campo quedó mal (después de escribir) */
+input:user-invalid {
+  border-color: hsl(0 75% 62%);
+}
+
+/* ==========================================================
+   PASO 3: LA TARJETA DE CRÉDITO
+   Basada en Uiverse.io (vinodjangid07), con los colores de la página
+   ========================================================== */
+.tarjeta-credito {
+  position: relative;
+  isolation: isolate;   /* el círculo de adorno queda atrás de los campos */
+  overflow: hidden;     /* corta el círculo en las puntas redondeadas */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 420px;
+  aspect-ratio: 1.586;  /* la proporción de una tarjeta de verdad */
+  margin: 4px auto 0;
+  padding: 20px;
+  border-radius: 14px;
+  background-image: radial-gradient(
+    circle 520px at 9% 80%,
+    hsl(var(--tono-celeste) 80% 34%) 0%,
+    hsl(var(--tono-verde) 65% 30%) 100%
+  );
+  box-shadow:
+    0 12px 30px hsl(0 0% 0% / 0.35),
+    inset 0 1px 0 hsl(0 0% 100% / 0.25);
+  color: hsl(0 0% 100%);
+}
+
+/* círculo de adorno arriba a la derecha (como en el cartel del index) */
+.tarjeta-credito::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -45%;
+  right: -18%;
+  width: 70%;
+  aspect-ratio: 1;
+  border: 28px solid hsl(0 0% 100% / 0.08);
+  border-radius: 50%;
+}
+
+/* ---- arriba: chip y símbolo sin contacto ---- */
+.tarjeta-arriba {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* el chip dorado, hecho solo con degradés */
+.tarjeta-chip {
+  width: 42px;
+  height: 32px;
+  border-radius: 6px;
+  background:
+    linear-gradient(90deg, transparent 30%, hsl(40 45% 40% / 0.6) 30% 34%, transparent 34% 66%, hsl(40 45% 40% / 0.6) 66% 70%, transparent 70%),
+    linear-gradient(0deg, transparent 46%, hsl(40 45% 40% / 0.6) 46% 54%, transparent 54%),
+    linear-gradient(135deg, hsl(45 75% 78%), hsl(40 55% 55%));
+}
+
+.tarjeta-contactless {
+  width: 26px;
+  height: 26px;
+  opacity: 0.85;
+}
+
+/* ---- etiquetas: chiquitas y en mayúscula, como en una tarjeta ---- */
+.tarjeta-credito label {
+  display: block;
+  font-size: 0.65rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: hsl(0 0% 100% / 0.75);
+}
+
+/* ---- campos: transparentes, con una rayita abajo ---- */
+.tarjeta-credito input {
+  width: 100%;
+  padding: 4px 0;
+  border: 0;
+  border-bottom: 1px solid hsl(0 0% 100% / 0.3);
+  border-radius: 0;
+  background: transparent;
+  color: hsl(0 0% 100%);
+  font-family: inherit;
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
+}
+
+.tarjeta-credito input::placeholder {
+  color: hsl(0 0% 100% / 0.55);
+}
+
+/* al escribir, la rayita se pone blanca y más gruesa */
+.tarjeta-credito input:focus {
+  outline: none;
+  border-bottom-color: hsl(0 0% 100%);
+  box-shadow: 0 1px 0 hsl(0 0% 100%);
+}
+
+/* si el dato quedó mal, la rayita se pone roja */
+.tarjeta-credito input:user-invalid {
+  border-bottom-color: hsl(0 100% 75%);
+  box-shadow: 0 1px 0 hsl(0 100% 75%);
+}
+
+/* el número, más grande */
+.tarjeta-numero input {
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* el titular se ve en mayúsculas, como en las tarjetas */
+#titular {
+  text-transform: uppercase;
+}
+
+/* ---- abajo: titular ancho, vencimiento y CVV angostos ---- */
+.tarjeta-abajo {
+  display: grid;
+  grid-template-columns: 1fr 4.5rem 3.5rem;
+  gap: 12px;
+}
+
+/* ---- paso 4: resumen ---- */
+/* los tres resúmenes empiezan ocultos... */
+.resumen {
+  display: none;
+}
+
+/* ...y se muestra solo el del plan marcado */
+form:has(#plan-basico:checked) .resumen-basico,
+form:has(#plan-estandar:checked) .resumen-estandar,
+form:has(#plan-premium:checked) .resumen-premium {
+  display: block;
+}
+
+.resumen p {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0;
+  padding: 10px 0;
+}
+
+.resumen p + p {
+  border-top: 1px solid var(--borde);
+}
+
+.resumen span {
+  color: var(--texto-suave);
+}
+
+.resumen strong {
+  text-align: right;
+}
+
+.resumen-total {
+  font-size: 1.1rem;
+}
+
+.resumen-total span {
+  color: var(--texto);
+  font-weight: 700;
+}
+
+.terminos {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  padding-top: 14px;
+  border-top: 1px solid var(--borde);
+  cursor: pointer;
+}
+
+.terminos input {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--acento);
+}
+
+button:focus-visible {
+  outline: 2px solid var(--texto);
+  outline-offset: 2px;
+}
+
+/* ==========================================================
+   PAGO CONFIRMADO: :target se activa cuando la dirección
+   termina en #pago-confirmado (eso pasa al tocar "Pagar")
+   ========================================================== */
+.exito {
+  display: none;
+  padding: 32px 20px;
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  background: var(--fondo-2);
+  text-align: center;
+}
+
+.exito:target {
+  display: block;
+}
+
+/* cuando se ve el mensaje, se esconde el formulario */
+body:has(.exito:target) form {
+  display: none;
+}
+
+.exito-icono {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: var(--acento-2);
+  color: var(--sobre-acento);
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.exito h3 {
+  margin: 0 0 8px;
+  font-size: 1.5rem;
+}
+
+.exito p {
+  margin: 0 0 20px;
+  color: var(--texto-suave);
+  line-height: 1.5;
+}
+
+.boton-link {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 8px;
+  background: var(--acento);
+  color: var(--sobre-acento);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.boton-link:hover {
+  background: var(--acento-2);
+}

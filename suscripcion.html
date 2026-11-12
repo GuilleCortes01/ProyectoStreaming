@@ -1,38 +1,189 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..800&display=swap">
-    <link rel="stylesheet" href="./estilos/style.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pago - ROLLING MOVIES</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./estilos/suscripcion.css">
+  <link rel="stylesheet" href="./estilos/style.css">
 </head>
 <body>
-     <nav class="navbar navbar-expand">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">ROLLING MOVIES</a>
 
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" href="index.html">Inicio</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="serie.html">Series</a></li>
-          <li class="nav-item"><a class="nav-link" href="peliculas.html">Películas</a></li>
-          <li class="nav-item"><a class="nav-link" href="404.html">Mi lista</a></li>
-        </ul>
+  <h1><a href="index.html">ROLLING MOVIES</a></h1>
+  <h2>Finalizá tu suscripción</h2>
 
-        <form class="d-flex ms-auto">
-          <input
-            class="form-control"
-            type="search"
-            placeholder="Buscar"
-            aria-label="Buscar"
-          />
-          <button class="btn" type="submit">Buscar</button>
-        </form>
-      </div>
-    </nav>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL" crossorigin="anonymous"></script>
+  <form action="#pago-confirmado" method="get">
+
+    <fieldset>
+      <legend>1. Elegí tu plan</legend>
+
+      <label class="opcion-plan">
+        <input type="radio" id="plan-basico" name="plan" value="basico" required>
+        <span class="opcion-texto">
+          <strong>Estándar</strong>
+          <small>Para ver solo, en la compu o en el celu.</small>
+        </span>
+        <span class="opcion-precio">$5<small>/mes</small></span>
+
+        <span class="opcion-beneficios">
+          <span>1 pantalla a la vez</span>
+          <span>Calidad HD</span>
+          <span>Películas y series ilimitadas</span>
+          <span>Cancelás cuando quieras</span>
+        </span>
+      </label>
+
+      <label class="opcion-plan">
+        <input type="radio" id="plan-estandar" name="plan" value="estandar">
+        <span class="opcion-texto">
+          <strong>Pareja <span class="opcion-cartel">Más elegido</span></strong>
+          <small>Para compartir, cada uno en su pantalla.</small>
+        </span>
+        <span class="opcion-precio">$10<small>/mes</small></span>
+
+        <span class="opcion-beneficios">
+          <span>2 pantallas a la vez</span>
+          <span>Calidad Full HD</span>
+          <span>Películas y series ilimitadas</span>
+          <span>Cancelás cuando quieras</span>
+        </span>
+      </label>
+
+      <label class="opcion-plan">
+        <input type="radio" id="plan-premium" name="plan" value="premium">
+        <span class="opcion-texto">
+          <strong>Familiar</strong>
+          <small>Para toda la familia, con la mejor imagen.</small>
+        </span>
+        <span class="opcion-precio">$16<small>/mes</small></span>
+
+        <span class="opcion-beneficios">
+          <span>4 pantallas a la vez</span>
+          <span>Calidad 4K</span>
+          <span>Películas y series ilimitadas</span>
+          <span>Cancelás cuando quieras</span>
+        </span>
+      </label>
+    </fieldset>
+
+    <p class="aviso">Elegí un plan para cargar tus datos.</p>
+
+    <div class="despues-del-plan">
+
+      <fieldset>
+        <legend>2. Tus datos</legend>
+
+        <div class="campo">
+          <label for="nombre">Nombre y apellido</label>
+          <input type="text" id="nombre" autocomplete="name"
+                 placeholder="Nombre y apellido"
+                 pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü]+( [A-Za-zÁÉÍÓÚáéíóúÑñÜü]+)+"
+                 title="Ingresá nombre y apellido, solo letras"
+                 minlength="5" maxlength="60" required>
+        </div>
+
+        <div class="campo">
+          <label for="email">Email</label>
+          <input type="email" id="email" autocomplete="email"
+                 placeholder="ejemplo@correo.com"
+                 pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+                 title="Ingresá un email con el formato ejemplo@correo.com"
+                 maxlength="80" required>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>3. Datos de la tarjeta</legend>
+
+        <div class="tarjeta-credito">
+
+          <div class="tarjeta-arriba" aria-hidden="true">
+            <span class="tarjeta-chip"></span>
+            <svg class="tarjeta-contactless" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M8.5 8.5a5 5 0 0 1 0 7" />
+              <path d="M12 6a8.5 8.5 0 0 1 0 12" />
+              <path d="M15.5 3.5a12 12 0 0 1 0 17" />
+            </svg>
+          </div>
+
+          <div class="tarjeta-numero">
+            <label for="numero">Número de tarjeta</label>
+            <input type="text" id="numero" placeholder="0000 0000 0000 0000"
+                   inputmode="numeric" autocomplete="cc-number"
+                   pattern="[0-9]{4} ?[0-9]{4} ?[0-9]{4} ?[0-9]{4}"
+                   title="Los 16 números de la tarjeta, con o sin espacios"
+                   minlength="16" maxlength="19" required>
+          </div>
+
+          <div class="tarjeta-abajo">
+            <div>
+              <label for="titular">Titular</label>
+              <input type="text" id="titular" autocomplete="cc-name"
+                     placeholder="Tu nombre"
+                     pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü]+( [A-Za-zÁÉÍÓÚáéíóúÑñÜü]+)+"
+                     title="Nombre y apellido como figura en la tarjeta, solo letras"
+                     minlength="5" maxlength="60" required>
+            </div>
+
+            <div>
+              <label for="vencimiento">Vence</label>
+              <input type="text" id="vencimiento" placeholder="MM/AA"
+                     inputmode="numeric" autocomplete="cc-exp"
+                     pattern="1[12]/26|(0[1-9]|1[0-2])/(2[7-9]|3[0-6])"
+                     title="Mes y año como figura en la tarjeta (MM/AA), sin estar vencida"
+                     minlength="5" maxlength="5" required>
+            </div>
+
+            <div>
+              <label for="cvv">CVV</label>
+              <input type="password" id="cvv" placeholder="•••"
+                     inputmode="numeric" autocomplete="cc-csc"
+                     pattern="[0-9]{3,4}"
+                     title="3 o 4 números"
+                     minlength="3" maxlength="4" required>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>4. Confirmá tu pago</legend>
+
+        <div class="resumen resumen-basico">
+          <p><span>Plan</span> <strong>Estándar · 1 pantalla, HD</strong></p>
+          <p class="resumen-total"><span>Total por mes</span> <strong>$20</strong></p>
+        </div>
+
+        <div class="resumen resumen-estandar">
+          <p><span>Plan</span> <strong>Pareja · 2 pantallas, Full HD</strong></p>
+          <p class="resumen-total"><span>Total por mes</span> <strong>$25</strong></p>
+        </div>
+
+        <div class="resumen resumen-premium">
+          <p><span>Plan</span> <strong>Familiar · 4 pantallas, 4K</strong></p>
+          <p class="resumen-total"><span>Total por mes</span> <strong>$33</strong></p>
+        </div>
+
+        <label class="terminos">
+          <input type="checkbox" required>
+          Acepto los términos y condiciones
+        </label>
+      </fieldset>
+
+      <button type="submit">Pagar y suscribirme</button>
+    </div>
+  </form>
+
+  <section class="exito" id="pago-confirmado">
+    <div class="exito-icono" aria-hidden="true">✓</div>
+    <h3>¡Pago confirmado!</h3>
+    <p>Tu suscripción a ROLLING MOVIES ya está activa. Te enviamos el comprobante por email.</p>
+    <a class="boton-link" href="index.html">Empezar a ver</a>
+  </section>
+
 </body>
 </html>
