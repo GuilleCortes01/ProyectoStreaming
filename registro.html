@@ -19,37 +19,38 @@
     <link rel="stylesheet" href="./estilos/nav.css">
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">ROLLING MOVIES</a>
+  <nav class="navbar lg:navbar-expand" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">ROLLING MOVIES</a>
 
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#menuNavegacion"
-      aria-controls="menuNavegacion"
-      aria-expanded="false"
-      aria-label="Abrir menú"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <button class="btn-icon navbar-toggler" type="button" data-bs-toggle="drawer" data-bs-target="#menuNavegacion"
+        aria-controls="menuNavegacion" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon" aria-hidden="true"></span>
+      </button>
 
-    <div class="collapse navbar-collapse" id="menuNavegacion">
-      <ul class="navbar-nav mb-2 lg:mb-0">
-        <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="serie.html">Series</a></li>
-        <li class="nav-item"><a class="nav-link" href="peliculas.html">Películas</a></li>
-        <li class="nav-item"><a class="nav-link" href="suscripcion.html">Suscribirme</a></li>
-      </ul>
+      <dialog class="drawer drawer-end" tabindex="-1" id="menuNavegacion" aria-labelledby="menuNavegacionTitulo">
+        <div class="drawer-header">
+          <h2 class="drawer-title navbar-brand" id="menuNavegacionTitulo">ROLLING MOVIES</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="drawer" aria-label="Cerrar menú"></button>
+        </div>
 
-      <form class="d-flex" role="search">
-        <input class="form-control" type="search" placeholder="Buscar" aria-label="Buscar" />
-        <button class="btn" type="submit">Buscar</button>
-      </form>
+        <div class="drawer-body">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="serie.html">Series</a></li>
+            <li class="nav-item"><a class="nav-link" href="peliculas.html">Películas</a></li>
+            <li class="nav-item"><a class="nav-link" href="suscripcion.html">Suscribirme</a></li>
+          </ul>
+
+          <form class="d-flex" role="search">
+            <input class="form-control" type="search" placeholder="Buscar" aria-label="Buscar" />
+            <button class="btn" type="submit">Buscar</button>
+            <a class="btn btn-login" href="login.html">Login</a>
+          </form>
+        </div>
+      </dialog>
     </div>
-  </div>
-</nav>
+  </nav>
     <main
       class="min-vh-100 d-flex align-items-center justify-content-center px-3 py-4"
     >
