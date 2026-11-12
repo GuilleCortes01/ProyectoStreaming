@@ -15,25 +15,38 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">ROLLING MOVIES</a>
+  <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">ROLLING MOVIES</a>
 
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" href="index.html">Inicio</a>
-        </li>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#menuNavegacion"
+      aria-controls="menuNavegacion"
+      aria-expanded="false"
+      aria-label="Abrir menú"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menuNavegacion">
+      <ul class="navbar-nav mb-2 lg:mb-0">
+        <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
         <li class="nav-item"><a class="nav-link" href="serie.html">Series</a></li>
         <li class="nav-item"><a class="nav-link" href="peliculas.html">Películas</a></li>
-        <li class="nav-item"><a class="nav-link" href="404.html">Mi lista</a></li>
+        <li class="nav-item"><a class="nav-link" href="suscripcion.html">Suscribirme</a></li>
       </ul>
 
-      <form class="d-flex ms-auto">
+      <form class="d-flex" role="search">
         <input class="form-control" type="search" placeholder="Buscar" aria-label="Buscar" />
         <button class="btn" type="submit">Buscar</button>
+        <a class="btn btn-login" href="#">Logearme</a>
       </form>
     </div>
-  </nav>
+  </div>
+</nav>
   <!--                    Carrusel          -->
   <section id="carruselInicio" class="carousel carousel-overlay slide contenedorCarrusel"
     aria-label="Películas y series destacadas" data-bs-autoplay="true" data-bs-interval="5000">
