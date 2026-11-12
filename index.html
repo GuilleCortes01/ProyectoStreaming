@@ -1,572 +1,721 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..800&display=swap"
+    />
+    <link rel="stylesheet" href="./estilos/style.css" />
+    <link rel="stylesheet" href="./estilos/carrusel.css" />
+    <link rel="stylesheet" href="./estilos/nav.css" />
+    <link rel="stylesheet" href="./estilos/PaginaPrincipal.css" />
+    <title>ROLLING MOVIES</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..800&display=swap">
-  <link rel="stylesheet" href="./estilos/style.css">
-  <link rel="stylesheet" href="./estilos/carrusel.css">
-  <link rel="stylesheet" href="./estilos/nav.css">
-  <link rel="stylesheet" href="./estilos/PaginaPrincipal.css">
-  <title>Document</title>
-</head>
+  <body>
+    <nav class="navbar lg:navbar-expand" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">ROLLING MOVIES</a>
 
-<body>
- <nav class="navbar lg:navbar-expand" data-bs-theme="dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">ROLLING MOVIES</a>
+        <button
+          class="btn-icon navbar-toggler"
+          type="button"
+          data-bs-toggle="drawer"
+          data-bs-target="#menuNavegacion"
+          aria-controls="menuNavegacion"
+          aria-expanded="false"
+          aria-label="Abrir menú"
+        >
+          <span class="navbar-toggler-icon" aria-hidden="true"></span>
+        </button>
 
-      <button class="btn-icon navbar-toggler" type="button" data-bs-toggle="drawer" data-bs-target="#menuNavegacion"
-        aria-controls="menuNavegacion" aria-expanded="false" aria-label="Abrir menú">
-        <span class="navbar-toggler-icon" aria-hidden="true"></span>
-      </button>
-
-      <dialog class="drawer drawer-end" tabindex="-1" id="menuNavegacion" aria-labelledby="menuNavegacionTitulo">
-        <div class="drawer-header">
-          <h2 class="drawer-title navbar-brand" id="menuNavegacionTitulo">ROLLING MOVIES</h2>
-          <button type="button" class="btn-close" data-bs-dismiss="drawer" aria-label="Cerrar menú"></button>
-        </div>
-
-        <div class="drawer-body">
-          <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="serie.html">Series</a></li>
-            <li class="nav-item"><a class="nav-link" href="peliculas.html">Películas</a></li>
-            <li class="nav-item"><a class="nav-link" href="suscripcion.html">Suscribirme</a></li>
-          </ul>
-
-          <form class="d-flex" role="search">
-            <input class="form-control" type="search" placeholder="Buscar" aria-label="Buscar" />
-            <button class="btn" type="submit">Buscar</button>
-            <a class="btn btn-login" href="login.html">Login</a>
-          </form>
-        </div>
-      </dialog>
-    </div>
-  </nav>
-  
-  <section id="carruselInicio" class="carousel carousel-overlay slide contenedorCarrusel m-5 md:m-9"
-    aria-label="Películas y series destacadas" data-bs-autoplay="true" data-bs-interval="5000" data-bs-pause="false">
-    <div class="carousel-inner"> 
-
-
-      <div class="carousel-item disenioDiapositiva align-items-end px-6 pt-6 pb-12 md:pt-12 md:ps-12 md:pe-12 active">
-        <img src="./img/carrusel/dune.png" class="imagen" alt="">
-
-        <div class="textosBotones md:ms-9">
-
-          <span class="etiqueta">Película · 2024 · Ciencia ficción</span>
-          <h1 class="titulo">Dune: Parte dos</h1>
-
-          <p class="descripcion d-none md:d-block">
-            Paul Atreides se une a Chani y a los Fremen para enfrentar
-            a los enemigos de su familia, mientras debe elegir
-            entre el amor y el destino del universo.
-          </p>
-
-          <div class="botonesDiapositiva">
-            <a href="404.html" class="botonVerDetalles">
-              Ver detalles
-            </a>
-
-            <a href="./404.html" class="botonMiLista">
-  + Mi lista
-</a>
+        <dialog
+          class="drawer drawer-end"
+          tabindex="-1"
+          id="menuNavegacion"
+          aria-labelledby="menuNavegacionTitulo"
+        >
+          <div class="drawer-header">
+            <h2 class="drawer-title navbar-brand" id="menuNavegacionTitulo">
+              ROLLING MOVIES
+            </h2>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="drawer"
+              aria-label="Cerrar menú"
+            ></button>
           </div>
-        </div>
-      </div>
-      
-      <div class="carousel-item disenioDiapositiva align-items-end px-6 pt-6 pb-12 md:pt-12 md:ps-12 md:pe-12">
-        <img src="./img/carrusel/godzilla.png" class="imagen" alt="">
 
-        <div class="textosBotones md:ms-9">
-          <span class="etiqueta">Película · 2023 · Ciencia ficción</span>
+          <div class="drawer-body">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="serie.html">Series</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="peliculas.html">Películas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="suscripcion.html">Suscribirme</a>
+              </li>
+            </ul>
 
-          <h1 class="titulo">Godzilla Minus One</h1>
-
-          <p class="descripcion d-none md:d-block">
-            En un Japón devastado por la guerra, la aparición de Godzilla
-            enfrenta a un grupo de sobrevivientes con una amenaza
-            capaz de destruir lo poco que les queda.
-          </p>
-
-          <div class="botonesDiapositiva">
-            <a href="404.html" class="botonVerDetalles">
-              Ver detalles
-            </a>
-
-            <a href="./404.html" class="botonMiLista">
-  + Mi lista
-</a>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control"
+                type="search"
+                placeholder="Buscar"
+                aria-label="Buscar"
+              />
+              <button class="btn" type="submit">Buscar</button>
+              <a class="btn btn-login" href="login.html">Login</a>
+            </form>
           </div>
-        </div>
+        </dialog>
       </div>
+    </nav>
 
-      <div class="carousel-item disenioDiapositiva align-items-end px-6 pt-6 pb-12 md:pt-12 md:ps-12 md:pe-12">
-        <img src="./img/carrusel/it.jfif" class="imagen" alt="">
+    <section
+      id="carruselInicio"
+      class="carousel carousel-overlay slide contenedorCarrusel m-5 md:m-9"
+      aria-label="Películas y series destacadas"
+      data-bs-autoplay="true"
+      data-bs-interval="5000"
+      data-bs-pause="false"
+    >
+      <div class="carousel-inner">
+        <div
+          class="carousel-item disenioDiapositiva align-items-end px-6 pt-6 pb-12 md:pt-12 md:ps-12 md:pe-12 active"
+        >
+          <img src="./img/carrusel/dune.png" class="imagen" alt="" />
 
-        <div class="textosBotones md:ms-9">
-          <span class="etiqueta">Película · 2019 · Terror</span>
+          <div class="textosBotones md:ms-9">
+            <span class="etiqueta">Película · 2024 · Ciencia ficción</span>
+            <h1 class="titulo">Dune: Parte dos</h1>
 
-          <h1 class="titulo">It</h1>
-
-
-          <p class="descripcion d-none md:d-block">
-            Veintisiete años después, los integrantes del Club de los
-            Perdedores regresan a Derry para enfrentar a Pennywise
-            y terminar con el terror que marcó su infancia.
-          </p>
-
-          <div class="botonesDiapositiva">
-            <a href="./terror.html" class="botonVerDetalles">
-              Ver detalles
-            </a>
-
-            <a href="./404.html" class="botonMiLista">
-  + Mi lista
-</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="carousel-item disenioDiapositiva align-items-end px-6 pt-6 pb-12 md:pt-12 md:ps-12 md:pe-12">
-        <img src="./img/carrusel/backrooms.png" class="imagen" alt="">
-
-        <div class="textosBotones md:ms-9">
-          <span class="etiqueta">Película · 2026 · Terror</span>
-
-          <h1 class="titulo">Backrooms</h1>
-
-          <p class="descripcion d-none md:d-block">
-            Una misteriosa puerta en una tienda de muebles conduce
-            a un laberinto inquietante, donde encontrar la salida
-            se convierte en una pesadilla.
-          </p>
-
-          <div class="botonesDiapositiva">
-            <a href="404.html" class="botonVerDetalles">
-              Ver detalles
-            </a>
-
-            <a href="./404.html" class="botonMiLista">
-  + Mi lista
-</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="carousel-item disenioDiapositiva align-items-end px-6 pt-6 pb-12 md:pt-12 md:ps-12 md:pe-12">
-        <img src="./img/carrusel/houseOfTheDragon.png" class="imagen" alt="">
-
-        <div class="textosBotones md:ms-9">
-          <span class="etiqueta">Serie · 2026 · Temporada 3</span>
-
-          <h1 class="titulo">House of the Dragon</h1>
-
-          <p class="descripcion d-none md:d-block">
-            La lucha por el Trono de Hierro divide a la casa Targaryen.
-            Entre alianzas, traiciones y dragones, la guerra por
-            el poder amenaza con consumir los Siete Reinos.
-          </p>
-
-          <div class="botonesDiapositiva">
-            <a href="404.html" class="botonVerDetalles">
-              Ver detalles
-            </a>
-
-            <a href="./404.html" class="botonMiLista">
-  + Mi lista
-</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="carousel-overlay-controls flechasIndicadores">
-
-      <button class="flechasDiapositiva flechaAnterior d-none md:d-flex" type="button" data-bs-target="#carruselInicio"
-        data-bs-slide="prev">
-        <span class="carousel-icon-prev" aria-hidden="true"></span>
-      </button>
-
-      <button class="flechasDiapositiva flechaSiguiente d-none md:d-flex" type="button" data-bs-target="#carruselInicio"
-        data-bs-slide="next">
-        <span class="carousel-icon-next" aria-hidden="true"></span>
-      </button>
-
-      <div class="carousel-indicators carrusel-indicadores">
-        <button type="button" data-bs-target="#carruselInicio" data-bs-slide-to="0" class="active"
-          aria-current="true"></button>
-
-        <button type="button" data-bs-target="#carruselInicio" data-bs-slide-to="1"></button>
-
-        <button type="button" data-bs-target="#carruselInicio" data-bs-slide-to="2"></button>
-
-        <button type="button" data-bs-target="#carruselInicio" data-bs-slide-to="3"></button>
-
-        <button type="button" data-bs-target="#carruselInicio" data-bs-slide-to="4"></button>
-
-
-      </div>
-    </div>
-  </section>
-
-        <main class="container py-8">
-
-        <section>
-            <h2 class="titulo-seccion">Terror</h2>
-
-            <div class="row row-cols-2 md:row-cols-3 lg:row-cols-5 g-6">
-
-                <div class="col">
-                    <a href="terror.html" class="tarjeta">
-                        <div class="tarjeta-poster">
-                            <img class="tarjeta-img" src="img/It (2017), de Andy Muschietti.jpg" alt="Póster de It">
-                            <span class="tarjeta-edad">+16</span>
-                        </div>
-                        <h3 class="tarjeta-titulo">It</h3>
-                        <p class="tarjeta-info">Película · 2017</p>
-                    </a>
-                </div>
-
-                <div class="col">
-                    <a href="404.html" class="tarjeta">
-                        <div class="tarjeta-poster">
-                            <img class="tarjeta-img" src="img/conjuring_poster_jpg (1600×1067).jpg" alt="Póster de El Conjuro">
-                            <span class="tarjeta-edad">+16</span>
-                        </div>
-                        <h3 class="tarjeta-titulo">El Conjuro</h3>
-                        <p class="tarjeta-info">Película · 2013</p>
-                    </a>
-                </div>
-
-                <div class="col">
-                    <a href="404.html" class="tarjeta">
-                        <div class="tarjeta-poster">
-                            <img class="tarjeta-img" src="img/Vuelven (2017).jpg" alt="Póster de Vuelven">
-                            <span class="tarjeta-edad">+16</span>
-                        </div>
-                        <h3 class="tarjeta-titulo">Vuelven</h3>
-                        <p class="tarjeta-info">Película · 2017</p>
-                    </a>
-                </div>
-
-                <div class="col">
-                    <a href="404.html" class="tarjeta">
-                        <div class="tarjeta-poster">
-                            <img class="tarjeta-img" src="img/La Monja 2 (2023).jpg" alt="Póster de La monja 2">
-                            <span class="tarjeta-edad">+16</span>
-                        </div>
-                        <h3 class="tarjeta-titulo">La monja 2</h3>
-                        <p class="tarjeta-info">Película · 2023</p>
-                    </a>
-                </div>
-
-                <div class="col">
-                    <a href="404.html" class="tarjeta">
-                        <div class="tarjeta-poster">
-                            <img class="tarjeta-img" src="img/The Walking Dead.jpg" alt="Póster de The Walking Dead">
-                            <span class="tarjeta-edad">+16</span>
-                        </div>
-                        <h3 class="tarjeta-titulo">The Walking Dead</h3>
-                        <p class="tarjeta-info">Serie · 2010</p>
-                    </a>
-                </div>
-
-            </div>
-        </section>
-
-        <aside class="promo">
-            <span class="promo-etiqueta">Promo de lanzamiento</span>
-            <h2 class="promo-titulo">Tu primer mes, gratis.</h2>
-            <p class="promo-texto">
-                Sin permanencia. Elegís tu plan y cancelás cuando quieras.<br>
-                Después, desde $20 por mes.
+            <p class="descripcion d-none md:d-block">
+              Paul Atreides se une a Chani y a los Fremen para enfrentar a los
+              enemigos de su familia, mientras debe elegir entre el amor y el
+              destino del universo.
             </p>
-            <a class="promo-boton" href="suscripcion.html">Suscribite ahora</a>
-        </aside>
 
-        <section>
-            <h2 class="titulo-seccion">Acción y aventura</h2>
-            <div class="row row-cols-2 md:row-cols-3 lg:row-cols-5 g-6">
+            <div class="botonesDiapositiva">
+              <a href="404.html" class="botonVerDetalles"> Ver detalles </a>
 
-                <div class="col">
-                    <a href="404.html" class="tarjeta">
-                        <div class="tarjeta-poster">
-                            <img class="tarjeta-img" src="img/Deadpool 2.jpg" alt="Póster de Deadpool 2">
-                            <span class="tarjeta-edad">+16</span>
-                        </div>
-                        <h3 class="tarjeta-titulo">Deadpool 2</h3>
-                        <p class="tarjeta-info">Película · 2018</p>
-                    </a>
-                </div>
-
-                <div class="col">
-                    <a href="404.html" class="tarjeta">
-                        <div class="tarjeta-poster">
-                            <img class="tarjeta-img" src="img/descarga.jpg" alt="Póster de Maze Runner: Correr o morir">
-                            <span class="tarjeta-edad">+13</span>
-                        </div>
-                        <h3 class="tarjeta-titulo">Maze Runner: Correr o morir</h3>
-                        <p class="tarjeta-info">Película · 2014</p>
-                    </a>
-                </div>
-
-                <div class="col">
-                    <a href="404.html" class="tarjeta">
-                        <div class="tarjeta-poster">
-                            <img class="tarjeta-img" src="img/Hasta el último hombre (póster) - 2016_.jpg" alt="Póster de Hasta el último hombre">
-                            <span class="tarjeta-edad">+16</span>
-                        </div>
-                        <h3 class="tarjeta-titulo">Hasta el último hombre</h3>
-                        <p class="tarjeta-info">Película · 2016</p>
-                    </a>
-                </div>
-
-                <div class="col">
-                    <a href="404.html" class="tarjeta">
-                        <div class="tarjeta-poster">
-                            <img class="tarjeta-img" src="img/Vikings.jpg" alt="Póster de Vikings">
-                            <span class="tarjeta-edad">+16</span>
-                        </div>
-                        <h3 class="tarjeta-titulo">Vikings</h3>
-                        <p class="tarjeta-info">Serie · 2013</p>
-                    </a>
-                </div>
-
+              <a href="./404.html" class="botonMiLista"> + Mi lista </a>
             </div>
-        </section>
+          </div>
+        </div>
 
-        <section>
-            <h2 class="titulo-seccion">Series para maratonear</h2>
-            <div class="row row-cols-2 md:row-cols-3 lg:row-cols-5 g-6">
+        <div
+          class="carousel-item disenioDiapositiva align-items-end px-6 pt-6 pb-12 md:pt-12 md:ps-12 md:pe-12"
+        >
+          <img src="./img/carrusel/godzilla.png" class="imagen" alt="" />
 
-                <div class="col">
-                    <a href="404.html" class="tarjeta">
-                        <div class="tarjeta-poster">
-                            <img class="tarjeta-img" src="img/Game of Thrones.jpg" alt="Póster de Game of Thrones">
-                            <span class="tarjeta-edad">+18</span>
-                        </div>
-                        <h3 class="tarjeta-titulo">Game of Thrones</h3>
-                        <p class="tarjeta-info">Serie · 2011</p>
-                    </a>
-                </div>
+          <div class="textosBotones md:ms-9">
+            <span class="etiqueta">Película · 2023 · Ciencia ficción</span>
 
-                <div class="col">
-                    <a href="404.html" class="tarjeta">
-                        <div class="tarjeta-poster">
-                            <img class="tarjeta-img" src="img/The Last Of Us.jpg" alt="Póster de The Last of Us">
-                            <span class="tarjeta-edad">+16</span>
-                        </div>
-                        <h3 class="tarjeta-titulo">The Last of Us</h3>
-                        <p class="tarjeta-info">Serie · 2023</p>
-                    </a>
-                </div>
+            <h1 class="titulo">Godzilla Minus One</h1>
 
-                <div class="col">
-                    <a href="404.html" class="tarjeta">
-                        <div class="tarjeta-poster">
-                            <img class="tarjeta-img" src="img/DRHouse.jpg" alt="Póster de Dr. House">
-                            <span class="tarjeta-edad">+13</span>
-                        </div>
-                        <h3 class="tarjeta-titulo">Dr. House</h3>
-                        <p class="tarjeta-info">Serie · 2004</p>
-                    </a>
-                </div>
+            <p class="descripcion d-none md:d-block">
+              En un Japón devastado por la guerra, la aparición de Godzilla
+              enfrenta a un grupo de sobrevivientes con una amenaza capaz de
+              destruir lo poco que les queda.
+            </p>
 
-                <div class="col">
-                    <a href="404.html" class="tarjeta">
-                        <div class="tarjeta-poster">
-                            <img class="tarjeta-img" src="img/The BigBang Theory.jpg" alt="Póster de The Big Bang Theory">
-                            <span class="tarjeta-edad">+13</span>
-                        </div>
-                        <h3 class="tarjeta-titulo">The Big Bang Theory</h3>
-                        <p class="tarjeta-info">Serie · 2007</p>
-                    </a>
-                </div>
+            <div class="botonesDiapositiva">
+              <a href="404.html" class="botonVerDetalles"> Ver detalles </a>
 
-                <div class="col">
-                    <a href="404.html" class="tarjeta">
-                        <div class="tarjeta-poster">
-                            <img class="tarjeta-img" src="img/Sex Education.jpg" alt="Póster de Sex Education">
-                            <span class="tarjeta-edad">+16</span>
-                        </div>
-                        <h3 class="tarjeta-titulo">Sex Education</h3>
-                        <p class="tarjeta-info">Serie · 2019</p>
-                    </a>
-                </div>
-
+              <a href="./404.html" class="botonMiLista"> + Mi lista </a>
             </div>
-        </section>
+          </div>
+        </div>
 
-        <section>
-            <h2 class="titulo-seccion">Anime</h2>
-            <div class="row row-cols-2 md:row-cols-3 lg:row-cols-5 g-6">
+        <div
+          class="carousel-item disenioDiapositiva align-items-end px-6 pt-6 pb-12 md:pt-12 md:ps-12 md:pe-12"
+        >
+          <img src="./img/carrusel/it.jfif" class="imagen" alt="" />
 
-                <div class="col">
-                    <a href="404.html" class="tarjeta">
-                        <div class="tarjeta-poster">
-                            <img class="tarjeta-img" src="img/JuJutsu Kaisen.jpg" alt="Póster de Jujutsu Kaisen">
-                            <span class="tarjeta-edad">+16</span>
-                        </div>
-                        <h3 class="tarjeta-titulo">Jujutsu Kaisen</h3>
-                        <p class="tarjeta-info">Serie · 2020</p>
-                    </a>
-                </div>
+          <div class="textosBotones md:ms-9">
+            <span class="etiqueta">Película · 2019 · Terror</span>
 
-                <div class="col">
-                    <a href="404.html" class="tarjeta">
-                        <div class="tarjeta-poster">
-                            <img class="tarjeta-img" src="img/Solo leveling 2024.jpg" alt="Póster de Solo Leveling">
-                            <span class="tarjeta-edad">+16</span>
-                        </div>
-                        <h3 class="tarjeta-titulo">Solo Leveling</h3>
-                        <p class="tarjeta-info">Serie · 2024</p>
-                    </a>
-                </div>
+            <h1 class="titulo">It</h1>
 
-                <div class="col">
-                    <a href="404.html" class="tarjeta">
-                        <div class="tarjeta-poster">
-                            <img class="tarjeta-img" src="img/Attack on Titan.jpg" alt="Póster de Attack on Titan">
-                            <span class="tarjeta-edad">+16</span>
-                        </div>
-                        <h3 class="tarjeta-titulo">Attack on Titan</h3>
-                        <p class="tarjeta-info">Serie · 2013</p>
-                    </a>
-                </div>
+            <p class="descripcion d-none md:d-block">
+              Veintisiete años después, los integrantes del Club de los
+              Perdedores regresan a Derry para enfrentar a Pennywise y terminar
+              con el terror que marcó su infancia.
+            </p>
 
-                <div class="col">
-                    <a href="404.html" class="tarjeta">
-                        <div class="tarjeta-poster">
-                            <img class="tarjeta-img" src="img/Boku no Hero Academia.jpg" alt="Póster de My Hero Academia">
-                            <span class="tarjeta-edad">+13</span>
-                        </div>
-                        <h3 class="tarjeta-titulo">My Hero Academia</h3>
-                        <p class="tarjeta-info">Serie · 2016</p>
-                    </a>
-                </div>
+            <div class="botonesDiapositiva">
+              <a href="./terror.html" class="botonVerDetalles">
+                Ver detalles
+              </a>
 
-                <div class="col">
-                    <a href="404.html" class="tarjeta">
-                        <div class="tarjeta-poster">
-                            <img class="tarjeta-img" src="img/Black Clover.jpg" alt="Póster de Black Clover">
-                            <span class="tarjeta-edad">+13</span>
-                        </div>
-                        <h3 class="tarjeta-titulo">Black Clover</h3>
-                        <p class="tarjeta-info">Serie · 2017</p>
-                    </a>
-                </div>
-
+              <a href="./404.html" class="botonMiLista"> + Mi lista </a>
             </div>
-        </section>
+          </div>
+        </div>
 
-        <section>
-            <h2 class="titulo-seccion">Fantasía</h2>
-            <div class="row row-cols-2 md:row-cols-3 lg:row-cols-5 g-6">
+        <div
+          class="carousel-item disenioDiapositiva align-items-end px-6 pt-6 pb-12 md:pt-12 md:ps-12 md:pe-12"
+        >
+          <img src="./img/carrusel/backrooms.png" class="imagen" alt="" />
 
-                <div class="col">
-                    <a href="404.html" class="tarjeta">
-                        <div class="tarjeta-poster">
-                            <img class="tarjeta-img" src="img/The Hobbit An Unexpected Journey.jpg" alt="Póster de El Hobbit: Un viaje inesperado">
-                            <span class="tarjeta-edad">+13</span>
-                        </div>
-                        <h3 class="tarjeta-titulo">El Hobbit: Un viaje inesperado</h3>
-                        <p class="tarjeta-info">Película · 2012</p>
-                    </a>
-                </div>
+          <div class="textosBotones md:ms-9">
+            <span class="etiqueta">Película · 2026 · Terror</span>
 
-                <div class="col">
-                    <a href="404.html" class="tarjeta">
-                        <div class="tarjeta-poster">
-                            <img class="tarjeta-img" src="img/coraline.jpg" alt="Póster de Coraline">
-                            <span class="tarjeta-edad">ATP</span>
-                        </div>
-                        <h3 class="tarjeta-titulo">Coraline</h3>
-                        <p class="tarjeta-info">Película · 2009</p>
-                    </a>
-                </div>
+            <h1 class="titulo">Backrooms</h1>
 
-                <div class="col">
-                    <a href="404.html" class="tarjeta">
-                        <div class="tarjeta-poster">
-                            <img class="tarjeta-img" src="img/Alicia in Wonderland.jpg" alt="Póster de Alicia en el país de las maravillas">
-                            <span class="tarjeta-edad">ATP</span>
-                        </div>
-                        <h3 class="tarjeta-titulo">Alicia en el país de las maravillas</h3>
-                        <p class="tarjeta-info">Película · 2010</p>
-                    </a>
-                </div>
+            <p class="descripcion d-none md:d-block">
+              Una misteriosa puerta en una tienda de muebles conduce a un
+              laberinto inquietante, donde encontrar la salida se convierte en
+              una pesadilla.
+            </p>
 
+            <div class="botonesDiapositiva">
+              <a href="404.html" class="botonVerDetalles"> Ver detalles </a>
+
+              <a href="./404.html" class="botonMiLista"> + Mi lista </a>
             </div>
-        </section>
+          </div>
+        </div>
 
-        <section>
-            <h2 class="titulo-seccion">Romance y drama</h2>
-            <div class="row row-cols-2 md:row-cols-3 lg:row-cols-5 g-6">
+        <div
+          class="carousel-item disenioDiapositiva align-items-end px-6 pt-6 pb-12 md:pt-12 md:ps-12 md:pe-12"
+        >
+          <img
+            src="./img/carrusel/houseOfTheDragon.png"
+            class="imagen"
+            alt=""
+          />
 
-                <div class="col">
-                    <a href="404.html" class="tarjeta">
-                        <div class="tarjeta-poster">
-                            <img class="tarjeta-img" src="img/Corazones Malheridos.jpg" alt="Póster de Corazones malheridos">
-                            <span class="tarjeta-edad">+13</span>
-                        </div>
-                        <h3 class="tarjeta-titulo">Corazones malheridos</h3>
-                        <p class="tarjeta-info">Película · 2022</p>
-                    </a>
-                </div>
+          <div class="textosBotones md:ms-9">
+            <span class="etiqueta">Serie · 2026 · Temporada 3</span>
 
-                <div class="col">
-                    <a href="404.html" class="tarjeta">
-                        <div class="tarjeta-poster">
-                            <img class="tarjeta-img" src="img/A dos metros de ti (2019).jpg" alt="Póster de A dos metros de ti">
-                            <span class="tarjeta-edad">+13</span>
-                        </div>
-                        <h3 class="tarjeta-titulo">A dos metros de ti</h3>
-                        <p class="tarjeta-info">Película · 2019</p>
-                    </a>
-                </div>
+            <h1 class="titulo">House of the Dragon</h1>
 
-                <div class="col">
-                    <a href="404.html" class="tarjeta">
-                        <div class="tarjeta-poster">
-                            <img class="tarjeta-img" src="img/Anne.jpg" alt="Póster de Anne with an E">
-                            <span class="tarjeta-edad">+13</span>
-                        </div>
-                        <h3 class="tarjeta-titulo">Anne with an E</h3>
-                        <p class="tarjeta-info">Serie · 2017</p>
-                    </a>
-                </div>
+            <p class="descripcion d-none md:d-block">
+              La lucha por el Trono de Hierro divide a la casa Targaryen. Entre
+              alianzas, traiciones y dragones, la guerra por el poder amenaza
+              con consumir los Siete Reinos.
+            </p>
 
+            <div class="botonesDiapositiva">
+              <a href="404.html" class="botonVerDetalles"> Ver detalles </a>
+
+              <a href="./404.html" class="botonMiLista"> + Mi lista </a>
             </div>
-        </section>
+          </div>
+        </div>
+      </div>
 
+      <div class="carousel-overlay-controls flechasIndicadores">
+        <button
+          class="flechasDiapositiva flechaAnterior d-none md:d-flex"
+          type="button"
+          data-bs-target="#carruselInicio"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-icon-prev" aria-hidden="true"></span>
+        </button>
+
+        <button
+          class="flechasDiapositiva flechaSiguiente d-none md:d-flex"
+          type="button"
+          data-bs-target="#carruselInicio"
+          data-bs-slide="next"
+        >
+          <span class="carousel-icon-next" aria-hidden="true"></span>
+        </button>
+
+        <div class="carousel-indicators carrusel-indicadores">
+          <button
+            type="button"
+            data-bs-target="#carruselInicio"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+          ></button>
+
+          <button
+            type="button"
+            data-bs-target="#carruselInicio"
+            data-bs-slide-to="1"
+          ></button>
+
+          <button
+            type="button"
+            data-bs-target="#carruselInicio"
+            data-bs-slide-to="2"
+          ></button>
+
+          <button
+            type="button"
+            data-bs-target="#carruselInicio"
+            data-bs-slide-to="3"
+          ></button>
+
+          <button
+            type="button"
+            data-bs-target="#carruselInicio"
+            data-bs-slide-to="4"
+          ></button>
+        </div>
+      </div>
+    </section>
+
+    <main class="container py-8">
+      <section>
+        <h2 class="titulo-seccion">Terror</h2>
+
+        <div class="row row-cols-2 md:row-cols-3 lg:row-cols-5 g-6">
+          <div class="col">
+            <a href="terror.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/It (2017), de Andy Muschietti.jpg"
+                  alt="Póster de It"
+                />
+                <span class="tarjeta-edad">+16</span>
+              </div>
+              <h3 class="tarjeta-titulo">It</h3>
+              <p class="tarjeta-info">Película · 2017</p>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/conjuring_poster_jpg (1600×1067).jpg"
+                  alt="Póster de El Conjuro"
+                />
+                <span class="tarjeta-edad">+16</span>
+              </div>
+              <h3 class="tarjeta-titulo">El Conjuro</h3>
+              <p class="tarjeta-info">Película · 2013</p>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/Vuelven (2017).jpg"
+                  alt="Póster de Vuelven"
+                />
+                <span class="tarjeta-edad">+16</span>
+              </div>
+              <h3 class="tarjeta-titulo">Vuelven</h3>
+              <p class="tarjeta-info">Película · 2017</p>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/La Monja 2 (2023).jpg"
+                  alt="Póster de La monja 2"
+                />
+                <span class="tarjeta-edad">+16</span>
+              </div>
+              <h3 class="tarjeta-titulo">La monja 2</h3>
+              <p class="tarjeta-info">Película · 2023</p>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/The Walking Dead.jpg"
+                  alt="Póster de The Walking Dead"
+                />
+                <span class="tarjeta-edad">+16</span>
+              </div>
+              <h3 class="tarjeta-titulo">The Walking Dead</h3>
+              <p class="tarjeta-info">Serie · 2010</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <aside class="promo">
+        <span class="promo-etiqueta">Promo de lanzamiento</span>
+        <h2 class="promo-titulo">Tu primer mes, gratis.</h2>
+        <p class="promo-texto">
+          Sin permanencia. Elegís tu plan y cancelás cuando quieras.<br />
+          Después, desde $20 por mes.
+        </p>
+        <a class="promo-boton" href="suscripcion.html">Suscribite ahora</a>
+      </aside>
+
+      <section>
+        <h2 class="titulo-seccion">Acción y aventura</h2>
+        <div class="row row-cols-2 md:row-cols-3 lg:row-cols-5 g-6">
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/Deadpool 2.jpg"
+                  alt="Póster de Deadpool 2"
+                />
+                <span class="tarjeta-edad">+16</span>
+              </div>
+              <h3 class="tarjeta-titulo">Deadpool 2</h3>
+              <p class="tarjeta-info">Película · 2018</p>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/descarga.jpg"
+                  alt="Póster de Maze Runner: Correr o morir"
+                />
+                <span class="tarjeta-edad">+13</span>
+              </div>
+              <h3 class="tarjeta-titulo">Maze Runner: Correr o morir</h3>
+              <p class="tarjeta-info">Película · 2014</p>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/Hasta el último hombre (póster) - 2016_.jpg"
+                  alt="Póster de Hasta el último hombre"
+                />
+                <span class="tarjeta-edad">+16</span>
+              </div>
+              <h3 class="tarjeta-titulo">Hasta el último hombre</h3>
+              <p class="tarjeta-info">Película · 2016</p>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/Vikings.jpg"
+                  alt="Póster de Vikings"
+                />
+                <span class="tarjeta-edad">+16</span>
+              </div>
+              <h3 class="tarjeta-titulo">Vikings</h3>
+              <p class="tarjeta-info">Serie · 2013</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="titulo-seccion">Series para maratonear</h2>
+        <div class="row row-cols-2 md:row-cols-3 lg:row-cols-5 g-6">
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/Game of Thrones.jpg"
+                  alt="Póster de Game of Thrones"
+                />
+                <span class="tarjeta-edad">+18</span>
+              </div>
+              <h3 class="tarjeta-titulo">Game of Thrones</h3>
+              <p class="tarjeta-info">Serie · 2011</p>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/The Last Of Us.jpg"
+                  alt="Póster de The Last of Us"
+                />
+                <span class="tarjeta-edad">+16</span>
+              </div>
+              <h3 class="tarjeta-titulo">The Last of Us</h3>
+              <p class="tarjeta-info">Serie · 2023</p>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/DRHouse.jpg"
+                  alt="Póster de Dr. House"
+                />
+                <span class="tarjeta-edad">+13</span>
+              </div>
+              <h3 class="tarjeta-titulo">Dr. House</h3>
+              <p class="tarjeta-info">Serie · 2004</p>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/The BigBang Theory.jpg"
+                  alt="Póster de The Big Bang Theory"
+                />
+                <span class="tarjeta-edad">+13</span>
+              </div>
+              <h3 class="tarjeta-titulo">The Big Bang Theory</h3>
+              <p class="tarjeta-info">Serie · 2007</p>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/Sex Education.jpg"
+                  alt="Póster de Sex Education"
+                />
+                <span class="tarjeta-edad">+16</span>
+              </div>
+              <h3 class="tarjeta-titulo">Sex Education</h3>
+              <p class="tarjeta-info">Serie · 2019</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="titulo-seccion">Anime</h2>
+        <div class="row row-cols-2 md:row-cols-3 lg:row-cols-5 g-6">
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/JuJutsu Kaisen.jpg"
+                  alt="Póster de Jujutsu Kaisen"
+                />
+                <span class="tarjeta-edad">+16</span>
+              </div>
+              <h3 class="tarjeta-titulo">Jujutsu Kaisen</h3>
+              <p class="tarjeta-info">Serie · 2020</p>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/Solo leveling 2024.jpg"
+                  alt="Póster de Solo Leveling"
+                />
+                <span class="tarjeta-edad">+16</span>
+              </div>
+              <h3 class="tarjeta-titulo">Solo Leveling</h3>
+              <p class="tarjeta-info">Serie · 2024</p>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/Attack on Titan.jpg"
+                  alt="Póster de Attack on Titan"
+                />
+                <span class="tarjeta-edad">+16</span>
+              </div>
+              <h3 class="tarjeta-titulo">Attack on Titan</h3>
+              <p class="tarjeta-info">Serie · 2013</p>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/Boku no Hero Academia.jpg"
+                  alt="Póster de My Hero Academia"
+                />
+                <span class="tarjeta-edad">+13</span>
+              </div>
+              <h3 class="tarjeta-titulo">My Hero Academia</h3>
+              <p class="tarjeta-info">Serie · 2016</p>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/Black Clover.jpg"
+                  alt="Póster de Black Clover"
+                />
+                <span class="tarjeta-edad">+13</span>
+              </div>
+              <h3 class="tarjeta-titulo">Black Clover</h3>
+              <p class="tarjeta-info">Serie · 2017</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="titulo-seccion">Fantasía</h2>
+        <div class="row row-cols-2 md:row-cols-3 lg:row-cols-5 g-6">
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/The Hobbit An Unexpected Journey.jpg"
+                  alt="Póster de El Hobbit: Un viaje inesperado"
+                />
+                <span class="tarjeta-edad">+13</span>
+              </div>
+              <h3 class="tarjeta-titulo">El Hobbit: Un viaje inesperado</h3>
+              <p class="tarjeta-info">Película · 2012</p>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/coraline.jpg"
+                  alt="Póster de Coraline"
+                />
+                <span class="tarjeta-edad">ATP</span>
+              </div>
+              <h3 class="tarjeta-titulo">Coraline</h3>
+              <p class="tarjeta-info">Película · 2009</p>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/Alicia in Wonderland.jpg"
+                  alt="Póster de Alicia en el país de las maravillas"
+                />
+                <span class="tarjeta-edad">ATP</span>
+              </div>
+              <h3 class="tarjeta-titulo">
+                Alicia en el país de las maravillas
+              </h3>
+              <p class="tarjeta-info">Película · 2010</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="titulo-seccion">Romance y drama</h2>
+        <div class="row row-cols-2 md:row-cols-3 lg:row-cols-5 g-6">
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/Corazones Malheridos.jpg"
+                  alt="Póster de Corazones malheridos"
+                />
+                <span class="tarjeta-edad">+13</span>
+              </div>
+              <h3 class="tarjeta-titulo">Corazones malheridos</h3>
+              <p class="tarjeta-info">Película · 2022</p>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/A dos metros de ti (2019).jpg"
+                  alt="Póster de A dos metros de ti"
+                />
+                <span class="tarjeta-edad">+13</span>
+              </div>
+              <h3 class="tarjeta-titulo">A dos metros de ti</h3>
+              <p class="tarjeta-info">Película · 2019</p>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="404.html" class="tarjeta">
+              <div class="tarjeta-poster">
+                <img
+                  class="tarjeta-img"
+                  src="img/Anne.jpg"
+                  alt="Póster de Anne with an E"
+                />
+                <span class="tarjeta-edad">+13</span>
+              </div>
+              <h3 class="tarjeta-titulo">Anne with an E</h3>
+              <p class="tarjeta-info">Serie · 2017</p>
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
-        <footer class="footer">
-  <div class="footercontainer">
-    <div class="footerleft">
-      <h3>Rolling Movies</h3>
-      <p>Tu catálogo de películas favorito.</p>
-    </div>
+    <footer class="footer">
+      <div class="footercontainer">
+        <div class="footerleft">
+          <h3>Rolling Movies</h3>
+          <p>Tu catálogo de películas favorito.</p>
+        </div>
 
-    <div class="footerlinks">
-      <a href="#sobrenosotros">Sobre nosotros</a>
-      <a href="#preguntasfrecuentes">Preguntas frecuentes y ayuda</a>
-      <a href="#contacto">Contactanos</a>
-    </div>
+        <div class="footerlinks">
+          <a href="#sobrenosotros">Sobre nosotros</a>
+          <a href="#preguntasfrecuentes">Preguntas frecuentes y ayuda</a>
+          <a href="#contacto">Contactanos</a>
+        </div>
+      </div>
 
-  </div>
+      <p class="footercopy">
+        © <span id="year"></span> RollingMovie. Todos los derechos reservados.
+      </p>
+    </footer>
 
-  <p class="footercopy">© <span id="year"></span> RollingMovie. Todos los derechos reservados.</p>
-</footer>
-
-
-  <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL"
-    crossorigin="anonymous"></script>
-</body>
-
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
